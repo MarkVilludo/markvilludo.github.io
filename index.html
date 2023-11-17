@@ -9,12 +9,32 @@
         <link rel="stylesheet" href="">
         <link rel="icon" type="image/x-icon" href="php.svg">
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="toggle.js"></script>
+        <script>
+            tailwind.config = { 
+                darkMode: 'class', 
+            } 
+        </script>
     </head>
-    <body>
+    <!-- credits icons to https://blade-ui-kit.com/blade-icons?search=html -->
+    <body id="mode-body" class="">
     <!-- Global Container -->
-    <div class="flex justify-center items-center bg-slate-100 min-h-screen">
-        <div class="bg-white p-6 m-3 space-y-10 shadow-lg rounded-3xl md:p-40">
+    <div class="flex relative justify-center items-center bg-slate-100 min-h-screen bg-white">
+        <div class="bg-white px-6 m-3 space-y-7 shadow-lg rounded-3xl md:p-40  dark:bg-gray-900 dark:text-white">
             <!-- menu -->
+            <div class="flex md:invisible visible absolute  top-3 right-3">
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <select id="mode-sm" onchange="chooseThemeSm()" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
+                        <option class="text-black dark:text-white dark:bg-slate-800">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
+                        </option>
+                        <option class="text-black dark:text-white dark:bg-slate-800">
+                            Dark
+                        </option>
+                    </select>
+                </label>
+            </div>
+
             <div class="invisible flex md:visible md:flex-row md:space-y-0 md:space-x-8 md:justify-end">
                 <div class="group">
                     <a href="#home">Home</a>
@@ -44,7 +64,18 @@
                         border-black group-hover:opacity-100"
                     ></div>
                 </div>
+                <div>
+                    <select id="mode" onchange="chooseTheme()" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
+                        <option class="text-black dark:text-white dark:bg-slate-800">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
+                        </option>
+                        <option class="text-black dark:text-white dark:bg-slate-800">
+                            Dark
+                        </option>
+                    </select>
+                </div>
             </div>
+       
 
             <!-- home -->
             <div id="home" class="flex flex-col justify-center h-full max-w-[1000px]">
@@ -55,11 +86,11 @@
             <!-- skills -->
             <div id="skills" class="grid grid-rows-2 max-w-[1000px]">
                 <div class="flex">
-                    <div class="flex flex-row pt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-7" id="Layer_1" height="512" viewBox="0 0 24 24" width="512" data-name="Layer 1"><path d="m19 1h-14a5.006 5.006 0 0 0 -5 5v12a5.006 5.006 0 0 0 5 5h14a5.006 5.006 0 0 0 5-5v-12a5.006 5.006 0 0 0 -5-5zm-14 2h14a3 3 0 0 1 3 3v1h-20v-1a3 3 0 0 1 3-3zm14 18h-14a3 3 0 0 1 -3-3v-9h20v9a3 3 0 0 1 -3 3zm0-8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 0-2h12a1 1 0 0 1 1 1zm-4 4a1 1 0 0 1 -1 1h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 1 1zm-12-12a1 1 0 1 1 1 1 1 1 0 0 1 -1-1zm3 0a1 1 0 1 1 1 1 1 1 0 0 1 -1-1zm3 0a1 1 0 1 1 1 1 1 1 0 0 1 -1-1z"/></svg>
+                    <div class="flex flex-row">
+                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><defs></defs><polygon points="20.17 19 17.58 21.59 19 23 23 19 19 15 17.58 16.41 20.17 19"></polygon><polygon points="11.83 19 14.42 16.41 13 15 9 19 13 23 14.42 21.59 11.83 19"></polygon><circle cx="9" cy="8" r="1"></circle><circle cx="6" cy="8" r="1"></circle><path d="M28,4H4c-1.1028,0-2,.8975-2,2V26c0,1.1025,.8972,2,2,2H28c1.1028,0,2-.8975,2-2V6c0-1.1025-.8972-2-2-2Zm0,2v4H4V6H28ZM4,26V12H28v14H4Z"></path><rect id="_Transparent_Rectangle_" data-name="&amp;lt;Transparent Rectangle&amp;gt;" class="cls-1" width="32" height="32" style="fill: none"></rect></svg>
                     </div>
-                    <div class="flex flex-row pl-3">
-                        <div class="font-bold text-2xl md:text-3xl text-black">Technology used</div>
+                    <div class="flex flex-row pl-2">
+                        <div class="dark:text-white font-bold text-2xl md:text-3xl text-black">Technology used</div>
                     </div>
                 </div>
               
@@ -67,152 +98,258 @@
                     I enjoy diving into and learning new things. Here's a list of technologies I've worked with
                 </div>
             </div>
-            <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-4 text-center pb-8">
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+            <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-4 text-center pb-8 dark:fill-current dark:text-white">
+                <!-- php -->
+                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://www.php.net/docs.php">
-                        <p class="my-4">PHP</p>
+                        <div class="flex items-center justify-center">
+                            <svg class="w-12 h-12" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M320 104.5c171.4 0 303.2 72.2 303.2 151.5S491.3 407.5 320 407.5c-171.4 0-303.2-72.2-303.2-151.5S148.7 104.5 320 104.5m0-16.8C143.3 87.7 0 163 0 256s143.3 168.3 320 168.3S640 349 640 256 496.7 87.7 320 87.7zM218.2 242.5c-7.9 40.5-35.8 36.3-70.1 36.3l13.7-70.6c38 0 63.8-4.1 56.4 34.3zM97.4 350.3h36.7l8.7-44.8c41.1 0 66.6 3 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7h-70.7L97.4 350.3zm185.7-213.6h36.5l-8.7 44.8c31.5 0 60.7-2.3 74.8 10.7 14.8 13.6 7.7 31-8.3 113.1h-37c15.4-79.4 18.3-86 12.7-92-5.4-5.8-17.7-4.6-47.4-4.6l-18.8 96.6h-36.5l32.7-168.6zM505 242.5c-8 41.1-36.7 36.3-70.1 36.3l13.7-70.6c38.2 0 63.8-4.1 56.4 34.3zM384.2 350.3H421l8.7-44.8c43.2 0 67.1 2.5 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7H417l-32.8 168.7z"></path></svg>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://laravel.com/docs/10.x/readme">
-                        <p class="my-4">Laravel</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>Laravel</title><path d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                    <p class="my-4">Laravel</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+                <!-- mysql -->
+                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://dev.mysql.com/doc/">
-                        <p class="my-4">MySQL</p>
-                    </a>
-                  </div>
-                  <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
-                    <a href="https://www.mongodb.com/docs/">
-                        <p class="my-4">MongoDB</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>MySQL</title><path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"></path></svg>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
-                    <a href="https://redis.io/docs/">
-                        <p class="my-4">Redis</p>
-                    </a>
+                <!-- mongodb -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
+                    <div class="flex space-x-2 items-center justify-center">
+                        <div class="flex flex-row">
+                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M13.74 4.23c-.84-1-1.57-2-1.71-2.22H12c-.14.21-.87 1.22-1.71 2.22-7.2 9.19 1.14 15.39 1.14 15.39l.07.05c.06.95.22 2.33.22 2.33h.62s.15-1.37.21-2.33l.07-.06s8.32-6.19 1.12-15.38zM12 19.48a3.48 3.48 0 0 1-.48-.48L12 9l.45 10a3.57 3.57 0 0 1-.45.48z"></path></svg>
+                        </div>
+                        <div class="flex flex-row">
+                            <a href="https://www.mongodb.com/docs/">
+                                <p class="my-4">MongoDB</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+                <!-- redis -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
+                    <div class="flex space-x-2 items-center justify-center">
+                        <div class="flex flex-row">
+                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 24" fill="currentColor"><path d="m27.994 14.729c-.012.267-.365.566-1.091.945-1.495.778-9.236 3.967-10.883 4.821-.589.419-1.324.67-2.116.67-.641 0-1.243-.164-1.768-.452l.019.01c-1.304-.622-9.539-3.95-11.023-4.659-.741-.35-1.119-.653-1.132-.933v2.83c0 .282.39.583 1.132.933 1.484.709 9.722 4.037 11.023 4.659.504.277 1.105.44 1.744.44.795 0 1.531-.252 2.132-.681l-.011.008c1.647-.859 9.388-4.041 10.883-4.821.76-.396 1.096-.7 1.096-.982s0-2.791 0-2.791z"></path><path d="m27.992 10.115c-.013.267-.365.565-1.09.944-1.495.778-9.236 3.967-10.883 4.821-.59.421-1.326.672-2.121.672-.639 0-1.24-.163-1.763-.449l.019.01c-1.304-.627-9.539-3.955-11.023-4.664-.741-.35-1.119-.653-1.132-.933v2.83c0 .282.39.583 1.132.933 1.484.709 9.721 4.037 11.023 4.659.506.278 1.108.442 1.749.442.793 0 1.527-.251 2.128-.677l-.011.008c1.647-.859 9.388-4.043 10.883-4.821.76-.397 1.096-.7 1.096-.984s0-2.791 0-2.791z"></path><path d="m27.992 5.329c.014-.285-.358-.534-1.107-.81-1.451-.533-9.152-3.596-10.624-4.136-.528-.242-1.144-.383-1.794-.383-.734 0-1.426.18-2.035.498l.024-.012c-1.731.622-9.924 3.835-11.381 4.405-.729.287-1.086.552-1.073.834v2.83c0 .282.39.583 1.132.933 1.484.709 9.721 4.038 11.023 4.66.504.277 1.105.439 1.744.439.795 0 1.531-.252 2.133-.68l-.011.008c1.647-.859 9.388-4.043 10.883-4.821.76-.397 1.096-.7 1.096-.984s0-2.791 0-2.791h-.009zm-17.967 2.684 6.488-.996-1.96 2.874zm14.351-2.588-4.253 1.68-3.835-1.523 4.246-1.679 3.838 1.517zm-11.265-2.785-.628-1.157 1.958.765 1.846-.604-.499 1.196 1.881.7-2.426.252-.543 1.311-.879-1.457-2.8-.252 2.091-.754zm-4.827 1.632c1.916 0 3.467.602 3.467 1.344s-1.559 1.344-3.467 1.344-3.474-.603-3.474-1.344 1.553-1.344 3.474-1.344z"></path></svg>
+                        </div>
+                        <div class="flex flex-row">
+                            <a href="https://www.mongodb.com/docs/">
+                                <p class="my-4">Redis</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- html -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://www.w3schools.com/html/">
-                        <p class="my-4">HTML</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg fill="currentColor" class="w-8 h-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                    <title>html-five2</title>
+                                    <path d="M1.892 0l2.567 28.801 11.524 3.199 11.554-3.204 2.572-28.796h-28.216zM25.336 26.963l-9.288 2.574v0.015l-0.024-0.007-0.024 0.007v-0.015l-9.288-2.574-2.195-24.609h23.015l-2.195 24.609zM20.336 16.569l-0.408 4.58-3.944 1.065-3.933-1.060-0.252-2.82h-3.547l0.495 5.547 7.252 2.006 7.229-2.006 0.97-10.844h-12.874l-0.322-3.617h13.517l0.316-3.532h-17.694l0.953 10.681z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                    <p class="my-4">HTML</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+                <!-- css3 -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-                        <p class="my-4">CSS</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M480 32l-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">CSS3</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+                <!-- javascript -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://javascript.info/">
-                        <p class="my-4">Javascript</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8 rounded-3xl" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">Javascript</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+                <!-- reactjs -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://legacy.reactjs.org/tutorial/tutorial.html">
-                        <p class="my-4">ReactJS</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <g>
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path fill-rule="nonzero" d="M14.448 16.24a21.877 21.877 0 0 1-1.747 2.175c1.672 1.623 3.228 2.383 4.09 1.884.864-.498.983-2.225.414-4.484-.853.19-1.78.334-2.757.425zm-1.31.087a27.512 27.512 0 0 1-2.276 0c.377.492.758.948 1.138 1.364.38-.416.76-.872 1.138-1.364zm5.04-7.894c2.665.764 4.405 2.034 4.405 3.567 0 1.533-1.74 2.803-4.405 3.567.67 2.69.441 4.832-.886 5.598-1.328.767-3.298-.105-5.292-2.03-1.994 1.925-3.964 2.797-5.292 2.03-1.327-.766-1.557-2.908-.886-5.598-2.665-.764-4.405-2.034-4.405-3.567 0-1.533 1.74-2.803 4.405-3.567-.67-2.69-.441-4.832.886-5.598 1.328-.767 3.298.105 5.292 2.03 1.994-1.925 3.964-2.797 5.292-2.03 1.327.766 1.557 2.908.886 5.598zm-.973-.248c.57-2.26.45-3.986-.413-4.484-.863-.499-2.419.261-4.09 1.884.591.643 1.179 1.374 1.746 2.175.978.09 1.904.234 2.757.425zm-10.41 7.63c-.57 2.26-.45 3.986.413 4.484.863.499 2.419-.261 4.09-1.884a21.877 21.877 0 0 1-1.746-2.175 21.877 21.877 0 0 1-2.757-.425zm4.067-8.142a27.512 27.512 0 0 1 2.276 0A20.523 20.523 0 0 0 12 6.31c-.38.416-.76.872-1.138 1.364zm-1.31.087A21.877 21.877 0 0 1 11.3 5.585C9.627 3.962 8.07 3.202 7.209 3.701c-.864.498-.983 2.225-.414 4.484.853-.19 1.78-.334 2.757-.425zm4.342 7.52A25.368 25.368 0 0 0 15.787 12a25.368 25.368 0 0 0-1.893-3.28 25.368 25.368 0 0 0-3.788 0A25.368 25.368 0 0 0 8.213 12a25.368 25.368 0 0 0 1.893 3.28 25.368 25.368 0 0 0 3.788 0zm1.284-.131c.615-.08 1.2-.183 1.75-.304a20.523 20.523 0 0 0-.612-1.667 27.512 27.512 0 0 1-1.138 1.97zM8.822 8.85c-.615.08-1.2.183-1.75.304.17.536.374 1.094.612 1.667a27.512 27.512 0 0 1 1.138-1.97zm-1.75 5.994c.55.121 1.135.223 1.75.304a27.512 27.512 0 0 1-1.138-1.97c-.238.572-.442 1.13-.612 1.666zm-.978-.245c.261-.834.6-1.708 1.01-2.6-.41-.892-.749-1.766-1.01-2.6-2.242.637-3.677 1.604-3.677 2.6s1.435 1.963 3.677 2.6zm10.834-5.445c-.55-.121-1.135-.223-1.75-.304a27.511 27.511 0 0 1 1.138 1.97c.238-.572.442-1.13.612-1.666zm.978.245c-.261.834-.6 1.708-1.01 2.6.41.892.749 1.766 1.01 2.6 2.242-.637 3.677-1.604 3.677-2.6s-1.435-1.963-3.677-2.6zM12 13.88a1.88 1.88 0 1 1 0-3.76 1.88 1.88 0 0 1 0 3.76z"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">ReactJS</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
-                    <a href="https://vuejs.org/guide/introduction.html">
-                        <p class="my-4">VueJs</p>
+                <!-- github -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
+                    <a href="https://github.com">
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">Github</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
-                    <a href="https://github.com/">
-                        <p class="my-4">Github</p>
-                    </a>
-                </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+                <!-- nodejs -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://nodejs.org/en/learn">
-                        <p class="my-4">NodeJs</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M12 21.985c-.275 0-.532-.074-.772-.202l-2.439-1.448c-.365-.203-.182-.277-.072-.314.496-.165.588-.201 1.101-.493.056-.037.129-.02.185.017l1.87 1.12c.074.036.166.036.221 0l7.319-4.237c.074-.036.11-.11.11-.202V7.768c0-.091-.036-.165-.11-.201l-7.319-4.219c-.073-.037-.165-.037-.221 0L4.552 7.566c-.073.036-.11.129-.11.201v8.457c0 .073.037.166.11.202l2 1.157c1.082.548 1.762-.095 1.762-.735V8.502c0-.11.091-.221.22-.221h.936c.108 0 .22.092.22.221v8.347c0 1.449-.788 2.294-2.164 2.294-.422 0-.752 0-1.688-.46l-1.925-1.099a1.55 1.55 0 0 1-.771-1.34V7.786c0-.55.293-1.064.771-1.339l7.316-4.237a1.637 1.637 0 0 1 1.544 0l7.317 4.237c.479.274.771.789.771 1.339v8.458c0 .549-.293 1.063-.771 1.34l-7.317 4.236c-.241.11-.516.165-.773.165zm2.256-5.816c-3.21 0-3.87-1.468-3.87-2.714 0-.11.092-.221.22-.221h.954c.11 0 .201.073.201.184.147.971.568 1.449 2.514 1.449 1.54 0 2.202-.35 2.202-1.175 0-.477-.185-.825-2.587-1.063-1.999-.2-3.246-.643-3.246-2.238 0-1.485 1.247-2.366 3.339-2.366 2.347 0 3.503.809 3.649 2.568a.297.297 0 0 1-.056.165c-.037.036-.091.073-.146.073h-.953a.212.212 0 0 1-.202-.164c-.221-1.012-.789-1.34-2.292-1.34-1.689 0-1.891.587-1.891 1.027 0 .531.237.696 2.514.99 2.256.293 3.32.715 3.32 2.294-.02 1.615-1.339 2.531-3.67 2.531z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">NodeJs</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
+                <!-- aws -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://docs.aws.amazon.com/">
-                        <p class="my-4">Deployments</p>
+                        <div class="flex items-center justify-center">
+                            <div class="flex pt-3">
+                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M180.41 203.01c-.72 22.65 10.6 32.68 10.88 39.05a8.164 8.164 0 0 1-4.1 6.27l-12.8 8.96a10.66 10.66 0 0 1-5.63 1.92c-.43-.02-8.19 1.83-20.48-25.61a78.608 78.608 0 0 1-62.61 29.45c-16.28.89-60.4-9.24-58.13-56.21-1.59-38.28 34.06-62.06 70.93-60.05 7.1.02 21.6.37 46.99 6.27v-15.62c2.69-26.46-14.7-46.99-44.81-43.91-2.4.01-19.4-.5-45.84 10.11-7.36 3.38-8.3 2.82-10.75 2.82-7.41 0-4.36-21.48-2.94-24.2 5.21-6.4 35.86-18.35 65.94-18.18a76.857 76.857 0 0 1 55.69 17.28 70.285 70.285 0 0 1 17.67 52.36l-.01 69.29zM93.99 235.4c32.43-.47 46.16-19.97 49.29-30.47 2.46-10.05 2.05-16.41 2.05-27.4-9.67-2.32-23.59-4.85-39.56-4.87-15.15-1.14-42.82 5.63-41.74 32.26-1.24 16.79 11.12 31.4 29.96 30.48zm170.92 23.05c-7.86.72-11.52-4.86-12.68-10.37l-49.8-164.65c-.97-2.78-1.61-5.65-1.92-8.58a4.61 4.61 0 0 1 3.86-5.25c.24-.04-2.13 0 22.25 0 8.78-.88 11.64 6.03 12.55 10.37l35.72 140.83 33.16-140.83c.53-3.22 2.94-11.07 12.8-10.24h17.16c2.17-.18 11.11-.5 12.68 10.37l33.42 142.63L420.98 80.1c.48-2.18 2.72-11.37 12.68-10.37h19.72c.85-.13 6.15-.81 5.25 8.58-.43 1.85 3.41-10.66-52.75 169.9-1.15 5.51-4.82 11.09-12.68 10.37h-18.69c-10.94 1.15-12.51-9.66-12.68-10.75L328.67 110.7l-32.78 136.99c-.16 1.09-1.73 11.9-12.68 10.75h-18.3zm273.48 5.63c-5.88.01-33.92-.3-57.36-12.29a12.802 12.802 0 0 1-7.81-11.91v-10.75c0-8.45 6.2-6.9 8.83-5.89 10.04 4.06 16.48 7.14 28.81 9.6 36.65 7.53 52.77-2.3 56.72-4.48 13.15-7.81 14.19-25.68 5.25-34.95-10.48-8.79-15.48-9.12-53.13-21-4.64-1.29-43.7-13.61-43.79-52.36-.61-28.24 25.05-56.18 69.52-55.95 12.67-.01 46.43 4.13 55.57 15.62 1.35 2.09 2.02 4.55 1.92 7.04v10.11c0 4.44-1.62 6.66-4.87 6.66-7.71-.86-21.39-11.17-49.16-10.75-6.89-.36-39.89.91-38.41 24.97-.43 18.96 26.61 26.07 29.7 26.89 36.46 10.97 48.65 12.79 63.12 29.58 17.14 22.25 7.9 48.3 4.35 55.44-19.08 37.49-68.42 34.44-69.26 34.42zm40.2 104.86c-70.03 51.72-171.69 79.25-258.49 79.25A469.127 469.127 0 0 1 2.83 327.46c-6.53-5.89-.77-13.96 7.17-9.47a637.37 637.37 0 0 0 316.88 84.12 630.22 630.22 0 0 0 241.59-49.55c11.78-5 21.77 7.8 10.12 16.38zm29.19-33.29c-8.96-11.52-59.28-5.38-81.81-2.69-6.79.77-7.94-5.12-1.79-9.47 40.07-28.17 105.88-20.1 113.44-10.63 7.55 9.47-2.05 75.41-39.56 106.91-5.76 4.87-11.27 2.3-8.71-4.1 8.44-21.25 27.39-68.49 18.43-80.02z"></path></svg>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
-                    <a href="https://docs.aws.amazon.com/">
-                        <p class="my-4">Ubuntu</p>
+                <!-- vuejs -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
+                    <a href="https://vuejs.org/guide/introduction.html">
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M356.9 64.3H280l-56 88.6-48-88.6H0L224 448 448 64.3h-91.1zm-301.2 32h53.8L224 294.5 338.4 96.3h53.8L224 384.5 55.7 96.3z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">VueJs</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500">
-                    <a href="https://docs.aws.amazon.com/">
-                        <p class="my-4">AWS</p>
-                    </a>
-                </div>
-                <div class="shadow-md  rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 shadow2 hover:scale-110 duration-500">
+                <!-- tailwind -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://tailwindcss.com/docs/installation">
-                        <p class="my-4">Tailwind</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512" fill="currentColor"><path d="M128,204.6666718C145.0624084,136.2265015,187.7375946,102,256,102c102.3999939,0,115.2000122,77,166.3999939,89.8333282c34.1376038,8.5598297,64-4.2734985,89.6000061-38.5C494.9375916,221.7734985,452.2623901,256,384,256c-102.3999939,0-115.2000122-77-166.3999939-89.8333282C183.4624023,157.606842,153.6000061,170.4401703,128,204.6666718z M0,358.6666565C17.0623989,290.2265015,59.7375984,256,128,256c102.3999939,0,115.1999969,77,166.3999939,89.8333435c34.1376038,8.5598145,64-4.2734985,89.6000061-38.5C366.9375916,375.7734985,324.2623901,410,256,410c-102.3999939,0-115.1999969-77-166.3999939-89.8333435C55.4624023,311.606842,25.6000004,324.440155,0,358.6666565z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">Tailwind</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md  rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 shadow2 hover:scale-110 duration-500">
+                <!-- bootstrap -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
                     <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">
-                        <p class="my-4">Bootstrap</p>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"></path>
+                                    <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">Bootstrap</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div class="shadow-md  rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 shadow2 hover:scale-110 duration-500">
-                    <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">
-                        <p class="my-4">Wordpress</p>
+                <!-- wordpress -->
+                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition">
+                    <a href="https://wordpress.org/documentation/">
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M12.633 7.653c0-.848-.305-1.435-.566-1.892l-.08-.13c-.317-.51-.594-.958-.594-1.48 0-.63.478-1.218 1.152-1.218.02 0 .039.002.058.003l.031.003A6.838 6.838 0 0 0 8 1.137 6.855 6.855 0 0 0 2.266 4.23c.16.005.313.009.442.009.717 0 1.828-.087 1.828-.087.37-.022.414.521.044.565 0 0-.371.044-.785.065l2.5 7.434 1.5-4.506-1.07-2.929c-.369-.022-.719-.065-.719-.065-.37-.022-.326-.588.043-.566 0 0 1.134.087 1.808.087.718 0 1.83-.087 1.83-.087.37-.022.413.522.043.566 0 0-.372.043-.785.065l2.48 7.377.684-2.287.054-.173c.27-.86.469-1.495.469-2.046zM1.137 8a6.864 6.864 0 0 0 3.868 6.176L1.73 5.206A6.837 6.837 0 0 0 1.137 8z"></path>
+                                    <path d="M6.061 14.583 8.121 8.6l2.109 5.78c.014.033.03.064.049.094a6.854 6.854 0 0 1-4.218.109zm7.96-9.876c.03.219.047.453.047.706 0 .696-.13 1.479-.522 2.458l-2.096 6.06a6.86 6.86 0 0 0 2.572-9.224z"></path>
+                                    <path fill-rule="evenodd" d="M0 8c0-4.411 3.589-8 8-8 4.41 0 8 3.589 8 8s-3.59 8-8 8c-4.411 0-8-3.589-8-8zm.367 0c0 4.209 3.424 7.633 7.633 7.633 4.208 0 7.632-3.424 7.632-7.633C15.632 3.79 12.208.367 8 .367 3.79.367.367 3.79.367 8z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="my-4">Wordpress</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>
 
             <!-- work experience -->
             <div id="work" class="flex max-w-[1000px] w-full mt-6">
-                <div class="flex flex-row pt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 388.14"><path d="m360 .02 21.53 1.12c10.07.51 17.88 9.18 17.35 19.23l-1.03 19.95c9.64 3.42 18.64 8.11 26.85 13.82l15.59-14.05c7.49-6.75 19.12-6.16 25.88 1.34l14.43 16c6.76 7.49 6.15 19.13-1.33 25.88l-16.73 15.11c4.1 8.45 7.18 17.49 9.1 26.93l22.97 1.19c10.07.51 17.88 9.16 17.36 19.24l-1.11 21.52c-.51 10.07-9.18 17.88-19.24 17.36l-23.2-1.2a113.69 113.69 0 0 1-11.88 25.56l15.37 17.05c6.75 7.48 6.15 19.13-1.34 25.88l-16 14.44c-7.49 6.75-19.13 6.13-25.88-1.34l-14.53-16.1c-8.53 4.66-17.71 8.26-27.34 10.63v-56.17c20.01-8.72 34.46-28.18 35.66-51.46 1.69-32.79-23.52-60.74-56.31-62.43-19.74-1.01-37.73 7.72-49.29 21.99h-66.17c3.42-10.11 8.2-19.55 14.12-28.14l-10.52-11.66c-6.75-7.48-6.15-19.13 1.33-25.88l16.02-14.44c7.47-6.74 19.12-6.14 25.87 1.34l11.38 12.6c9.64-4.74 20.03-8.15 30.91-10.02l.93-17.92C341.28 7.32 349.93-.49 360 .02zM188.23 257.05h-25.91c-.83 0-1.47.66-1.47 1.49v54.6c0 .83.64 1.49 1.47 1.49h25.88c.83 0 1.48-.66 1.48-1.49v-54.6c0-.82-.62-1.49-1.45-1.49zM19.91 141.15h93.21v-25.76c0-7.76 6.34-14.1 14.09-14.1h96.13c7.75 0 14.09 6.34 14.09 14.1v25.76h93.21c10.9 0 19.91 9.02 19.91 19.91v48.1c-22.51 15.43-45.73 28.58-69.67 39.31-24.07 10.78-48.89 19.14-74.57 24.91v-19.23c0-8.88-7.15-16.04-16.03-16.04h-30.04c-8.88 0-16.03 7.16-16.03 16.04v18.79C119.22 267.21 95 259 71.52 248.47 46.93 237.46 23.1 223.85 0 207.87v-46.81c0-10.91 9.01-19.91 19.91-19.91zm330.64 96.54v130.54a19.7 19.7 0 0 1-5.87 14.04c-3.63 3.61-8.6 5.87-14.04 5.87H19.91c-5.5 0-10.46-2.26-14.03-5.87C2.25 378.64 0 373.68 0 368.23V236.49c19.65 12.6 39.88 23.62 60.68 32.94 26.85 12.05 54.69 21.26 83.55 27.42v20.68c0 8.88 7.16 16.04 16.04 16.04h30.04c8.87 0 16.03-7.16 16.03-16.04v-20.3c29.41-6.16 58.01-15.52 85.42-27.82 20.14-9.02 39.73-19.63 58.79-31.72zm-212.56-117.2c-.95 0-1.79.85-1.79 1.8v18.31h78.13v-18.31c0-.96-.85-1.8-1.79-1.8h-74.55z"/></svg>
+                <div class="flex flex-row">
+                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="currentColor"><g><rect fill="none" height="24" width="24"></rect></g><g><g><path d="M4,19V8h16v3.29c0.72,0.22,1.4,0.54,2,0.97V8c0-1.11-0.89-2-2-2h-4V4c0-1.11-0.89-2-2-2h-4C8.89,2,8,2.89,8,4v2H4 C2.89,6,2.01,6.89,2.01,8L2,19c0,1.11,0.89,2,2,2h7.68c-0.3-0.62-0.5-1.29-0.6-2H4z M10,4h4v2h-4V4z"></path><path d="M18,13c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S20.76,13,18,13z M19.65,20.35l-2.15-2.15V15h1v2.79l1.85,1.85 L19.65,20.35z"></path></g></g></svg>
                 </div>
-                <div class="flex flex-row font-bold text-2xl md:text-3xl text-black text-left md:text-left pl-2">
+                <div class="dark:text-white flex flex-row font-bold text-2xl md:text-3xl text-black text-left md:text-left pl-2">
                     Work Experiences
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-2 gap-6">
                 <div>
-                    <a href="https://feiwin.net/">
-                        <h2 class="font-bold">Feiwin</h2>
-                    </a>
-                    <p class="text-md">Php Web Developer</p>
-                    <p class="text-sm">Oct 2023 - Present</p>
-                </div>
-                <div>
-                    <a href="https://summitmedia.com.ph">
-                        <h2 class="font-bold">Summit Media</h2>
-                    </a>
-                    <p class="text-md">Sr. Software Engineer</p>
+                    <h2 class="font-bold">Summit Media </h2>
+                    <p class="text-md">Sr. Software Engineer </p>
                     <p class="text-sm">June 20, 2022 - Oct 2023</p>
                 </div>
                 <div>
-                    <a href="https://iacademy.edu.ph/">
-                        <h2 class="font-bold">iACADEMY</h2>
-                    </a>
-                    <p class="text-md">Backend Developer</p>
+                    <h2 class="font-bold">iACADEMY </h2>
+                    <p class="text-md">Backend Developer </p>
                     <p class="text-sm">June 11, 2019 - Jue 2022</p>
                 </div>
                 <div>
-                    <a href="https://synergy88.media">
-                        <h2 class="font-bold">Synergy88 Digital</h2>
-                    </a>
-                    <p class="text-md">Backend Developer</p>
+                    <h2 class="font-bold">Synergy88 Digital </h2>
+                    <p class="text-md">Backend Developer </p>
                     <p class="text-sm">January 2018 - May 2019</p>
                 </div>
                 <div>
-                    <a href="https://camayacoastphil.com">
-                        <h2 class="font-bold">Contextus Tech (Camaya Coast)</h2>
-                    </a>
-                    <p class="text-md">Associate Web Developer</p>
+                    <h2 class="font-bold">Contextus Tech (Camaya Coast) </h2>
+                    <p class="text-md">Associate Web Developer </p>
                     <p class="text-sm">June 20, 2022 - Oct 2023</p>
                 </div>
                 <div>
-                    <h2 class="font-bold">Zonelisting Solutions Inc.</h2>
-                    <p class="text-md">Jr. Software Engineer</p>
+                    <h2 class="font-bold">Zonelisting Solutions Inc. </h2>
+                    <p class="text-md">Sr. Software Engineer </p>
                     <p class="text-sm">July 2015 - February 2016</p>
                 </div>
                 <div>
-                    <h2 class="font-bold">ByteHeads Corporations</h2>
-                    <p class="text-md">Jr. Android Developer</p>
+                    <h2 class="font-bold">ByteHeads Corporations </h2>
+                    <p class="text-md">Jr. Android Developer </p>
                     <p class="text-sm">May 2015 - July 2015</p>
                 </div>
             </div>
@@ -220,10 +357,10 @@
             <!-- work previous projects -->
             <div class="flex max-w-[1000px] w-full mt-6">
                 <div class="flex flex-row pt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-7" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M21,1h-2c-1.654,0-3,1.346-3,3H8c0-1.654-1.346-3-3-3H3C1.346,1,0,2.346,0,4v2c0,1.654,1.346,3,3,3h2c.297,0,.583-.044,.854-.125l4.517,7.68c-.237,.429-.372,.921-.372,1.445v2c0,1.654,1.346,3,3,3h2c1.654,0,3-1.346,3-3v-2c0-1.654-1.346-3-3-3h-2c-.388,0-.758,.075-1.099,.209L7.478,7.689c.329-.482,.522-1.063,.522-1.689h8c0,1.654,1.346,3,3,3h2c1.654,0,3-1.346,3-3v-2c0-1.654-1.346-3-3-3ZM3,7c-.552,0-1-.449-1-1v-2c0-.551,.448-1,1-1h2c.552,0,1,.449,1,1v2c0,.551-.448,1-1,1H3Zm12,10c.552,0,1,.448,1,1v2c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2Zm7-11c0,.551-.448,1-1,1h-2c-.552,0-1-.449-1-1v-2c0-.551,.448-1,1-1h2c.552,0,1,.449,1,1v2Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-7 dark:bg-white dark:w-10 dark:rounded-xl" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M21,1h-2c-1.654,0-3,1.346-3,3H8c0-1.654-1.346-3-3-3H3C1.346,1,0,2.346,0,4v2c0,1.654,1.346,3,3,3h2c.297,0,.583-.044,.854-.125l4.517,7.68c-.237,.429-.372,.921-.372,1.445v2c0,1.654,1.346,3,3,3h2c1.654,0,3-1.346,3-3v-2c0-1.654-1.346-3-3-3h-2c-.388,0-.758,.075-1.099,.209L7.478,7.689c.329-.482,.522-1.063,.522-1.689h8c0,1.654,1.346,3,3,3h2c1.654,0,3-1.346,3-3v-2c0-1.654-1.346-3-3-3ZM3,7c-.552,0-1-.449-1-1v-2c0-.551,.448-1,1-1h2c.552,0,1,.449,1,1v2c0,.551-.448,1-1,1H3Zm12,10c.552,0,1,.448,1,1v2c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2Zm7-11c0,.551-.448,1-1,1h-2c-.552,0-1-.449-1-1v-2c0-.551,.448-1,1-1h2c.552,0,1,.449,1,1v2Z"/></svg>
                 </div>
                 <div class="flex flex-row pl-3">
-                    <div class="font-bold text-2xl md:text-3xl text-black text-left md:text-left">Previous Projects</div>
+                    <div class="dark:text-white font-bold text-2xl md:text-3xl text-black text-left md:text-left">Previous Projects</div>
                 </div>
             </div>
             <div class="grid gap-2 grid-cols-2 md:grid-cols-3 justify-center items-center">
@@ -273,22 +410,6 @@
                         </div>
                     </div>
                 </a>
-
-                 <!-- camaya booking -->
-                 <a href="https://booking.camayacoast.com">
-                    <div class="flex relative group h-[20rem] items-center justify-center">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRiXn0_mio3pmNK_FR1ln2DAFBQ5djjL3PkQ&usqp=CAU" alt="" class="w-72 rounded-lg">
-                        <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-bg-black opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
-                            <div class="flex justify-between w-full">
-                                <div class="font-normal">
-                                    <p class="text-sm">Camaya Booking</p>
-                                    <p class="text-xs text-ellipsis">Daytour and Hotel Booking Reservation</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
 
                 <!-- image 4 -->
                 <a href="https://portal.dpap.deped.gov.ph/">
@@ -340,8 +461,8 @@
             <div id="contact" class="grid md:grid-cols-2 gap-4">
                 <div class="h-[10rem]">
                     <div class="flex">
-                        <div class="flex flex-row pt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-7" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm8.647,7H17.426a19.676,19.676,0,0,0-2.821-4.644A10.031,10.031,0,0,1,20.647,7ZM16.5,12a10.211,10.211,0,0,1-.476,3H7.976A10.211,10.211,0,0,1,7.5,12a10.211,10.211,0,0,1,.476-3h8.048A10.211,10.211,0,0,1,16.5,12ZM8.778,17h6.444A19.614,19.614,0,0,1,12,21.588,19.57,19.57,0,0,1,8.778,17Zm0-10A19.614,19.614,0,0,1,12,2.412,19.57,19.57,0,0,1,15.222,7ZM9.4,2.356A19.676,19.676,0,0,0,6.574,7H3.353A10.031,10.031,0,0,1,9.4,2.356ZM2.461,9H5.9a12.016,12.016,0,0,0-.4,3,12.016,12.016,0,0,0,.4,3H2.461a9.992,9.992,0,0,1,0-6Zm.892,8H6.574A19.676,19.676,0,0,0,9.4,21.644,10.031,10.031,0,0,1,3.353,17Zm11.252,4.644A19.676,19.676,0,0,0,17.426,17h3.221A10.031,10.031,0,0,1,14.605,21.644ZM21.539,15H18.1a12.016,12.016,0,0,0,.4-3,12.016,12.016,0,0,0-.4-3h3.437a9.992,9.992,0,0,1,0,6Z"/></svg>
+                        <div class="flex flex-row">
+                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16" fill="currentColor"><path fill="currentColor" d="M12.5 9c-1 0-1.8 0.4-2.4 1l-3.2-1.7c0.1-0.3 0.1-0.5 0.1-0.8 0-0.2 0-0.3 0-0.4l2.9-1.3c0.6 0.7 1.5 1.2 2.6 1.2 1.9 0 3.5-1.6 3.5-3.5s-1.6-3.5-3.5-3.5-3.5 1.6-3.5 3.5c0 0.2 0 0.3 0 0.4l-2.9 1.3c-0.6-0.7-1.5-1.2-2.6-1.2-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5c1 0 1.8-0.4 2.4-1l3.1 1.7c0 0.3 0 0.5 0 0.8 0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zM12.5 1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5c0-1.4 1.1-2.5 2.5-2.5zM3.5 10c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5c0 1.4-1.1 2.5-2.5 2.5zM12.5 15c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5c0 1.4-1.1 2.5-2.5 2.5z"></path></svg>
                         </div>
                         <div class="flex flex-row">
                             <p class="text-md text-2xl md:text-3xl font-bold pl-3">Lets connect</p>
@@ -420,7 +541,7 @@
                     <div class="grid md:grid-rows-2 mt-4 gap-4">
                             <div class="hover:bg-gray-200">
                                 <span class="block font-normal text-sm">First name</span>
-                                <input type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                <input id="fname" type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                                     focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                                     disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
                                     invalid:border-pink-500 invalid:text-pink-600
@@ -453,7 +574,7 @@
                                     invalid:border-pink-500 invalid:text-pink-600
                                     focus:invalid:border-pink-500 focus:invalid:ring-pink-500"> </textarea>
                             </div>
-                            <button class="bg-blue-700 font-bold text-white rounded-lg p-4 justify-center border border-b-4 border-b-blue-900 hover:border-t-blue-900 hover:border-t-4 hover:border-b-0 duration-100 trasition-all">Send message</button>
+                            <button id="access" class="bg-blue-700 font-bold text-white rounded-lg p-4 justify-center border border-b-4 border-b-blue-900 hover:border-t-blue-900 hover:border-t-4 hover:border-b-0 duration-100 trasition-all">Send message</button>
                         </div>
                     </form>
                 </div>
@@ -461,4 +582,24 @@
         </div>
     </div>
     </body>
+    <script>
+        function chooseTheme() {
+            d = document.getElementById("mode").value;
+            var element = document.getElementById("mode-body");
+            if (d === 'Light') {
+                element.classList.remove('dark');
+            } else {
+                element.classList.add('dark');
+            }
+        }
+        function chooseThemeSm() {
+            d = document.getElementById("mode-sm").value;
+            var element = document.getElementById("mode-body");
+            if (d === 'Light') {
+                element.classList.remove('dark');
+            } else {
+                element.classList.add('dark');
+            }
+        }
+    </script>
 </html>
