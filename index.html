@@ -24,7 +24,7 @@
             <!-- menu -->
             <div class="flex md:invisible visible absolute  top-3 right-3">
                 <label class="relative inline-flex items-center cursor-pointer">
-                    <select id="mode-sm" onchange="chooseThemeSm()" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
+                    <select id="mode-sm" onchange="chooseTheme('sm')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
                         <option class="text-black dark:text-white dark:bg-slate-800">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
                         </option>
@@ -64,7 +64,7 @@
                     ></div>
                 </div>
                 <div>
-                    <select id="mode" onchange="chooseTheme()" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
+                    <select id="mode-md" onchange="chooseTheme('md')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
                         <option class="text-black dark:text-white dark:bg-slate-800">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
                         </option>
@@ -676,17 +676,12 @@
     </div>
     </body>
     <script>
-        function chooseTheme() {
-            d = document.getElementById("mode").value;
-            var element = document.getElementById("mode-body");
-            if (d === 'Light') {
-                element.classList.remove('dark');
-            } else {
-                element.classList.add('dark');
-            }
-        }
-        function chooseThemeSm() {
-            d = document.getElementById("mode-sm").value;
+        function chooseTheme(mode) {
+            // console.log(mode)
+            modeType = 'mode-';
+            concatId = modeType.concat(mode);
+            d = document.getElementById(concatId).value;
+            // console.log(d)
             var element = document.getElementById("mode-body");
             if (d === 'Light') {
                 element.classList.remove('dark');
