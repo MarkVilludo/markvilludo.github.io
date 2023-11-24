@@ -18,52 +18,9 @@
     </head>
     <!-- credits icons to https://blade-ui-kit.com/blade-icons?search=html -->
     <body id="mode-body" class="">
-    <!-- Global Container -->
-    <div class="flex relative justify-center items-center bg-slate-100 min-h-screen bg-white dark:bg-gray-700">
-        <div class="bg-white px-6 pb-6 space-y-10 shadow-lg rounded-3xl md:p-40  dark:bg-gray-900 dark:text-white">
-            <div class="invisible flex md:visible md:flex-row md:space-y-0 md:space-x-8 md:justify-end">
-                <div class="group">
-                    <a href="#home">Home</a>
-                    <div
-                        class="mx-2 mt-2  duration-500 border-b-2 opacity-0
-                        border-black group-hover:opacity-100"
-                    ></div>
-                </div>
-                <div class="group">
-                    <a href="#skills"> Skills</a>
-                    <div
-                        class="mx-2 mt-2  duration-500 border-b-2 opacity-0
-                        border-black group-hover:opacity-100"
-                    ></div>
-                </div>
-                <div class="group">
-                    <a href="#work"> Work History</a>
-                    <div
-                        class="mx-2 mt-2  duration-500 border-b-2 opacity-0
-                        border-black group-hover:opacity-100"
-                    ></div>
-                </div>
-                <div class="group">
-                    <a href="#contact"> Contact</a>
-                    <div
-                        class="mx-2 mt-2  duration-500 border-b-2 opacity-0
-                        border-black group-hover:opacity-100"
-                    ></div>
-                </div>
-                <div>
-                    <select id="mode-md" onchange="chooseTheme('md')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
-                        <option class="text-black dark:text-white dark:bg-slate-800">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
-                        </option>
-                        <option class="text-black dark:text-white dark:bg-slate-800">
-                            Dark
-                        </option>
-                    </select>
-                </div>
-            </div>
-
+        <div class="relative">
             <!-- Hamburger Button -->
-            <div class="md:hidden">
+            <div class="md:hidden absolute top-6 right-3">
                 <button
                 id="menu-btn"
                 type="button"
@@ -74,642 +31,691 @@
                 <span class="hamburger-bottom bg-gray-400"></span>
                 </button>
             </div>
-
-        <!-- Mobile Menu -->
-        <div
-          id="menu"
-          class="absolute top-0 bottom-0 left-0 hidden flex-col self-end h-96 w-full py-1 pt-40 pl-12 space-y-3 text-lg text-white uppercase bg-gray-900 opacity-90 rounded-lg dark:bg-gray-200"
-        >
-            <a href="#work"> Work History</a>
-            <div
-                class="mx-2 mt-2  duration-500 border-b-2 opacity-0
-                border-black group-hover:opacity-100"
-            ></div>
-            <a href="#previous"> Previous Projects</a>
-            <div
-                class="mx-2 mt-2  duration-500 border-b-2 opacity-0
-                border-black group-hover:opacity-100"
-            ></div>
-            <a href="#contact"> Contact</a>
-            <div
-                class="mx-2 mt-2  duration-500 border-b-2 opacity-0
-                border-black group-hover:opacity-100"
-            ></div>
-             <!-- menu
-            <div class="flex md:invisible visible absolute  top-3 right-3">
-                <label class="relative inline-flex items-center cursor-pointer">
-                    <select id="mode-sm" onchange="chooseTheme('sm')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
-                        <option class="text-black dark:text-white dark:bg-slate-800">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
-                        </option>
-                        <option class="text-black dark:text-white dark:bg-slate-800">
-                            Dark
-                        </option>
-                    </select>
-                </label>
-            </div> -->
+            <!-- Mobile Menu -->
+            <div id="menu" class="relative hidden flex-col self-end h-96 w-full py-1 pt-40 pl-12 space-y-3 text-lg text-white uppercase bg-gray-900 opacity-90 rounded-lg dark:bg-gray-200">   
+                <a href="#skills"> Skills</a>
+                <div
+                    class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                    border-black group-hover:opacity-100"
+                ></div>
+                <a href="#work"> Work History</a>
+                <div
+                    class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                    border-black group-hover:opacity-100"
+                ></div>
+                <a href="#previous"> Previous Projects</a>
+                <div
+                    class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                    border-black group-hover:opacity-100"
+                ></div>
+                <a href="#contact"> Contact</a>
+                <div
+                    class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                    border-black group-hover:opacity-100"
+                ></div>
+                <!-- menu
+                <div class="flex md:invisible visible absolute  top-3 right-3">
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <select id="mode-sm" onchange="chooseTheme('sm')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
+                            <option class="text-black dark:text-white dark:bg-slate-800">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
+                            </option>
+                            <option class="text-black dark:text-white dark:bg-slate-800">
+                                Dark
+                            </option>
+                        </select>
+                    </label>
+                </div> -->
+            </div>
         </div>
+        <!-- Global Container -->
+        <div class="flex relative justify-center items-center bg-slate-100 min-h-screen bg-white dark:bg-gray-700">
+            <div class="bg-white px-6 pb-6 space-y-10 pt-0 mt-0 shadow-lg rounded-3xl md:p-40  dark:bg-gray-900 dark:text-white">
+                <div class="invisible flex md:visible md:flex-row md:space-y-0 md:space-x-8 md:justify-end">
+                    <div class="group">
+                        <a href="#home">Home</a>
+                        <div
+                            class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                            border-black group-hover:opacity-100"
+                        ></div>
+                    </div>
+                    <div class="group">
+                        <a href="#skills"> Skills</a>
+                        <div
+                            class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                            border-black group-hover:opacity-100"
+                        ></div>
+                    </div>
+                    <div class="group">
+                        <a href="#work"> Work History</a>
+                        <div
+                            class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                            border-black group-hover:opacity-100"
+                        ></div>
+                    </div>
+                    <div class="group">
+                        <a href="#contact"> Contact</a>
+                        <div
+                            class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                            border-black group-hover:opacity-100"
+                        ></div>
+                    </div>
+                    <div>
+                        <select id="mode-md" onchange="chooseTheme('md')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
+                            <option class="text-black dark:text-white dark:bg-slate-800">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
+                            </option>
+                            <option class="text-black dark:text-white dark:bg-slate-800">
+                                Dark
+                            </option>
+                        </select>
+                    </div>
+                </div>
 
-            <!-- home -->
-            <div id="home" class="flex flex-col justify-center h-full max-w-[1000px]">
-                <h2 class="text-4xl sm:text-7xl font-bold text-gray">    <p>Hi. I'm Mark Villudo</p></h2>
-                <p class="text-gray-500 mt-2"> A passionate software developer with 9yrs experience in building API's, CMS and responsive web application.</p>
-            </div>
-            <!-- skills -->
-            <div id="skills" class="grid grid-rows-2 max-w-[1000px]">
-                <div class="flex">
-                    <div class="flex flex-row">
-                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><defs></defs><polygon points="20.17 19 17.58 21.59 19 23 23 19 19 15 17.58 16.41 20.17 19"></polygon><polygon points="11.83 19 14.42 16.41 13 15 9 19 13 23 14.42 21.59 11.83 19"></polygon><circle cx="9" cy="8" r="1"></circle><circle cx="6" cy="8" r="1"></circle><path d="M28,4H4c-1.1028,0-2,.8975-2,2V26c0,1.1025,.8972,2,2,2H28c1.1028,0,2-.8975,2-2V6c0-1.1025-.8972-2-2-2Zm0,2v4H4V6H28ZM4,26V12H28v14H4Z"></path><rect id="_Transparent_Rectangle_" data-name="&amp;lt;Transparent Rectangle&amp;gt;" class="cls-1" width="32" height="32" style="fill: none"></rect></svg>
-                    </div>
-                    <div class="flex flex-row pl-2">
-                        <div class="dark:text-white font-bold text-2xl md:text-3xl text-black">Technology used</div>
-                    </div>
-                </div>
-              
-                <div class="flex text-gray-500">
-                    I enjoy diving into and learning new things. Here's a list of technologies I've worked with
-                </div>
-            </div>
-            <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-4 text-center pb-8 dark:fill-current dark:text-white">
-                <!-- php -->
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://www.php.net/docs.php">
-                        <div class="flex items-center justify-center">
-                            <svg class="w-12 h-12" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M320 104.5c171.4 0 303.2 72.2 303.2 151.5S491.3 407.5 320 407.5c-171.4 0-303.2-72.2-303.2-151.5S148.7 104.5 320 104.5m0-16.8C143.3 87.7 0 163 0 256s143.3 168.3 320 168.3S640 349 640 256 496.7 87.7 320 87.7zM218.2 242.5c-7.9 40.5-35.8 36.3-70.1 36.3l13.7-70.6c38 0 63.8-4.1 56.4 34.3zM97.4 350.3h36.7l8.7-44.8c41.1 0 66.6 3 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7h-70.7L97.4 350.3zm185.7-213.6h36.5l-8.7 44.8c31.5 0 60.7-2.3 74.8 10.7 14.8 13.6 7.7 31-8.3 113.1h-37c15.4-79.4 18.3-86 12.7-92-5.4-5.8-17.7-4.6-47.4-4.6l-18.8 96.6h-36.5l32.7-168.6zM505 242.5c-8 41.1-36.7 36.3-70.1 36.3l13.7-70.6c38.2 0 63.8-4.1 56.4 34.3zM384.2 350.3H421l8.7-44.8c43.2 0 67.1 2.5 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7H417l-32.8 168.7z"></path></svg>
-                        </div>
-                    </a>
-                </div>
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://laravel.com/docs/10.x/readme">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>Laravel</title><path d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z"></path></svg>
-                            </div>
-                            <div class="flex flex-row">
-                                    <p class="my-4">Laravel</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- mysql -->
-                <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://dev.mysql.com/doc/">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>MySQL</title><path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"></path></svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- mongodb -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <div class="flex space-x-2 items-center justify-center">
-                        <div class="flex flex-row">
-                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M13.74 4.23c-.84-1-1.57-2-1.71-2.22H12c-.14.21-.87 1.22-1.71 2.22-7.2 9.19 1.14 15.39 1.14 15.39l.07.05c.06.95.22 2.33.22 2.33h.62s.15-1.37.21-2.33l.07-.06s8.32-6.19 1.12-15.38zM12 19.48a3.48 3.48 0 0 1-.48-.48L12 9l.45 10a3.57 3.57 0 0 1-.45.48z"></path></svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <a href="https://www.mongodb.com/docs/">
-                                <p class="my-4">MongoDB</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- redis -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <div class="flex space-x-2 items-center justify-center">
-                        <div class="flex flex-row">
-                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 24" fill="currentColor"><path d="m27.994 14.729c-.012.267-.365.566-1.091.945-1.495.778-9.236 3.967-10.883 4.821-.589.419-1.324.67-2.116.67-.641 0-1.243-.164-1.768-.452l.019.01c-1.304-.622-9.539-3.95-11.023-4.659-.741-.35-1.119-.653-1.132-.933v2.83c0 .282.39.583 1.132.933 1.484.709 9.722 4.037 11.023 4.659.504.277 1.105.44 1.744.44.795 0 1.531-.252 2.132-.681l-.011.008c1.647-.859 9.388-4.041 10.883-4.821.76-.396 1.096-.7 1.096-.982s0-2.791 0-2.791z"></path><path d="m27.992 10.115c-.013.267-.365.565-1.09.944-1.495.778-9.236 3.967-10.883 4.821-.59.421-1.326.672-2.121.672-.639 0-1.24-.163-1.763-.449l.019.01c-1.304-.627-9.539-3.955-11.023-4.664-.741-.35-1.119-.653-1.132-.933v2.83c0 .282.39.583 1.132.933 1.484.709 9.721 4.037 11.023 4.659.506.278 1.108.442 1.749.442.793 0 1.527-.251 2.128-.677l-.011.008c1.647-.859 9.388-4.043 10.883-4.821.76-.397 1.096-.7 1.096-.984s0-2.791 0-2.791z"></path><path d="m27.992 5.329c.014-.285-.358-.534-1.107-.81-1.451-.533-9.152-3.596-10.624-4.136-.528-.242-1.144-.383-1.794-.383-.734 0-1.426.18-2.035.498l.024-.012c-1.731.622-9.924 3.835-11.381 4.405-.729.287-1.086.552-1.073.834v2.83c0 .282.39.583 1.132.933 1.484.709 9.721 4.038 11.023 4.66.504.277 1.105.439 1.744.439.795 0 1.531-.252 2.133-.68l-.011.008c1.647-.859 9.388-4.043 10.883-4.821.76-.397 1.096-.7 1.096-.984s0-2.791 0-2.791h-.009zm-17.967 2.684 6.488-.996-1.96 2.874zm14.351-2.588-4.253 1.68-3.835-1.523 4.246-1.679 3.838 1.517zm-11.265-2.785-.628-1.157 1.958.765 1.846-.604-.499 1.196 1.881.7-2.426.252-.543 1.311-.879-1.457-2.8-.252 2.091-.754zm-4.827 1.632c1.916 0 3.467.602 3.467 1.344s-1.559 1.344-3.467 1.344-3.474-.603-3.474-1.344 1.553-1.344 3.474-1.344z"></path></svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <a href="https://www.mongodb.com/docs/">
-                                <p class="my-4">Redis</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- html -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://www.w3schools.com/html/">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg fill="currentColor" class="w-8 h-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                    <title>html-five2</title>
-                                    <path d="M1.892 0l2.567 28.801 11.524 3.199 11.554-3.204 2.572-28.796h-28.216zM25.336 26.963l-9.288 2.574v0.015l-0.024-0.007-0.024 0.007v-0.015l-9.288-2.574-2.195-24.609h23.015l-2.195 24.609zM20.336 16.569l-0.408 4.58-3.944 1.065-3.933-1.060-0.252-2.82h-3.547l0.495 5.547 7.252 2.006 7.229-2.006 0.97-10.844h-12.874l-0.322-3.617h13.517l0.316-3.532h-17.694l0.953 10.681z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex flex-row">
-                                    <p class="my-4">HTML</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- css3 -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M480 32l-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"></path></svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">CSS3</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- javascript -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://javascript.info/">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8 rounded-3xl" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"></path></svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">Javascript</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- reactjs -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://legacy.reactjs.org/tutorial/tutorial.html">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <g>
-                                        <path fill="none" d="M0 0h24v24H0z"></path>
-                                        <path fill-rule="nonzero" d="M14.448 16.24a21.877 21.877 0 0 1-1.747 2.175c1.672 1.623 3.228 2.383 4.09 1.884.864-.498.983-2.225.414-4.484-.853.19-1.78.334-2.757.425zm-1.31.087a27.512 27.512 0 0 1-2.276 0c.377.492.758.948 1.138 1.364.38-.416.76-.872 1.138-1.364zm5.04-7.894c2.665.764 4.405 2.034 4.405 3.567 0 1.533-1.74 2.803-4.405 3.567.67 2.69.441 4.832-.886 5.598-1.328.767-3.298-.105-5.292-2.03-1.994 1.925-3.964 2.797-5.292 2.03-1.327-.766-1.557-2.908-.886-5.598-2.665-.764-4.405-2.034-4.405-3.567 0-1.533 1.74-2.803 4.405-3.567-.67-2.69-.441-4.832.886-5.598 1.328-.767 3.298.105 5.292 2.03 1.994-1.925 3.964-2.797 5.292-2.03 1.327.766 1.557 2.908.886 5.598zm-.973-.248c.57-2.26.45-3.986-.413-4.484-.863-.499-2.419.261-4.09 1.884.591.643 1.179 1.374 1.746 2.175.978.09 1.904.234 2.757.425zm-10.41 7.63c-.57 2.26-.45 3.986.413 4.484.863.499 2.419-.261 4.09-1.884a21.877 21.877 0 0 1-1.746-2.175 21.877 21.877 0 0 1-2.757-.425zm4.067-8.142a27.512 27.512 0 0 1 2.276 0A20.523 20.523 0 0 0 12 6.31c-.38.416-.76.872-1.138 1.364zm-1.31.087A21.877 21.877 0 0 1 11.3 5.585C9.627 3.962 8.07 3.202 7.209 3.701c-.864.498-.983 2.225-.414 4.484.853-.19 1.78-.334 2.757-.425zm4.342 7.52A25.368 25.368 0 0 0 15.787 12a25.368 25.368 0 0 0-1.893-3.28 25.368 25.368 0 0 0-3.788 0A25.368 25.368 0 0 0 8.213 12a25.368 25.368 0 0 0 1.893 3.28 25.368 25.368 0 0 0 3.788 0zm1.284-.131c.615-.08 1.2-.183 1.75-.304a20.523 20.523 0 0 0-.612-1.667 27.512 27.512 0 0 1-1.138 1.97zM8.822 8.85c-.615.08-1.2.183-1.75.304.17.536.374 1.094.612 1.667a27.512 27.512 0 0 1 1.138-1.97zm-1.75 5.994c.55.121 1.135.223 1.75.304a27.512 27.512 0 0 1-1.138-1.97c-.238.572-.442 1.13-.612 1.666zm-.978-.245c.261-.834.6-1.708 1.01-2.6-.41-.892-.749-1.766-1.01-2.6-2.242.637-3.677 1.604-3.677 2.6s1.435 1.963 3.677 2.6zm10.834-5.445c-.55-.121-1.135-.223-1.75-.304a27.511 27.511 0 0 1 1.138 1.97c.238-.572.442-1.13.612-1.666zm.978.245c-.261.834-.6 1.708-1.01 2.6.41.892.749 1.766 1.01 2.6 2.242-.637 3.677-1.604 3.677-2.6s-1.435-1.963-3.677-2.6zM12 13.88a1.88 1.88 0 1 1 0-3.76 1.88 1.88 0 0 1 0 3.76z"></path>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">ReactJS</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- github -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://github.com">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">Github</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- nodejs -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://nodejs.org/en/learn">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M12 21.985c-.275 0-.532-.074-.772-.202l-2.439-1.448c-.365-.203-.182-.277-.072-.314.496-.165.588-.201 1.101-.493.056-.037.129-.02.185.017l1.87 1.12c.074.036.166.036.221 0l7.319-4.237c.074-.036.11-.11.11-.202V7.768c0-.091-.036-.165-.11-.201l-7.319-4.219c-.073-.037-.165-.037-.221 0L4.552 7.566c-.073.036-.11.129-.11.201v8.457c0 .073.037.166.11.202l2 1.157c1.082.548 1.762-.095 1.762-.735V8.502c0-.11.091-.221.22-.221h.936c.108 0 .22.092.22.221v8.347c0 1.449-.788 2.294-2.164 2.294-.422 0-.752 0-1.688-.46l-1.925-1.099a1.55 1.55 0 0 1-.771-1.34V7.786c0-.55.293-1.064.771-1.339l7.316-4.237a1.637 1.637 0 0 1 1.544 0l7.317 4.237c.479.274.771.789.771 1.339v8.458c0 .549-.293 1.063-.771 1.34l-7.317 4.236c-.241.11-.516.165-.773.165zm2.256-5.816c-3.21 0-3.87-1.468-3.87-2.714 0-.11.092-.221.22-.221h.954c.11 0 .201.073.201.184.147.971.568 1.449 2.514 1.449 1.54 0 2.202-.35 2.202-1.175 0-.477-.185-.825-2.587-1.063-1.999-.2-3.246-.643-3.246-2.238 0-1.485 1.247-2.366 3.339-2.366 2.347 0 3.503.809 3.649 2.568a.297.297 0 0 1-.056.165c-.037.036-.091.073-.146.073h-.953a.212.212 0 0 1-.202-.164c-.221-1.012-.789-1.34-2.292-1.34-1.689 0-1.891.587-1.891 1.027 0 .531.237.696 2.514.99 2.256.293 3.32.715 3.32 2.294-.02 1.615-1.339 2.531-3.67 2.531z"></path></svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">NodeJs</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- aws -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://docs.aws.amazon.com/">
-                        <div class="flex items-center justify-center">
-                            <div class="flex pt-3">
-                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M180.41 203.01c-.72 22.65 10.6 32.68 10.88 39.05a8.164 8.164 0 0 1-4.1 6.27l-12.8 8.96a10.66 10.66 0 0 1-5.63 1.92c-.43-.02-8.19 1.83-20.48-25.61a78.608 78.608 0 0 1-62.61 29.45c-16.28.89-60.4-9.24-58.13-56.21-1.59-38.28 34.06-62.06 70.93-60.05 7.1.02 21.6.37 46.99 6.27v-15.62c2.69-26.46-14.7-46.99-44.81-43.91-2.4.01-19.4-.5-45.84 10.11-7.36 3.38-8.3 2.82-10.75 2.82-7.41 0-4.36-21.48-2.94-24.2 5.21-6.4 35.86-18.35 65.94-18.18a76.857 76.857 0 0 1 55.69 17.28 70.285 70.285 0 0 1 17.67 52.36l-.01 69.29zM93.99 235.4c32.43-.47 46.16-19.97 49.29-30.47 2.46-10.05 2.05-16.41 2.05-27.4-9.67-2.32-23.59-4.85-39.56-4.87-15.15-1.14-42.82 5.63-41.74 32.26-1.24 16.79 11.12 31.4 29.96 30.48zm170.92 23.05c-7.86.72-11.52-4.86-12.68-10.37l-49.8-164.65c-.97-2.78-1.61-5.65-1.92-8.58a4.61 4.61 0 0 1 3.86-5.25c.24-.04-2.13 0 22.25 0 8.78-.88 11.64 6.03 12.55 10.37l35.72 140.83 33.16-140.83c.53-3.22 2.94-11.07 12.8-10.24h17.16c2.17-.18 11.11-.5 12.68 10.37l33.42 142.63L420.98 80.1c.48-2.18 2.72-11.37 12.68-10.37h19.72c.85-.13 6.15-.81 5.25 8.58-.43 1.85 3.41-10.66-52.75 169.9-1.15 5.51-4.82 11.09-12.68 10.37h-18.69c-10.94 1.15-12.51-9.66-12.68-10.75L328.67 110.7l-32.78 136.99c-.16 1.09-1.73 11.9-12.68 10.75h-18.3zm273.48 5.63c-5.88.01-33.92-.3-57.36-12.29a12.802 12.802 0 0 1-7.81-11.91v-10.75c0-8.45 6.2-6.9 8.83-5.89 10.04 4.06 16.48 7.14 28.81 9.6 36.65 7.53 52.77-2.3 56.72-4.48 13.15-7.81 14.19-25.68 5.25-34.95-10.48-8.79-15.48-9.12-53.13-21-4.64-1.29-43.7-13.61-43.79-52.36-.61-28.24 25.05-56.18 69.52-55.95 12.67-.01 46.43 4.13 55.57 15.62 1.35 2.09 2.02 4.55 1.92 7.04v10.11c0 4.44-1.62 6.66-4.87 6.66-7.71-.86-21.39-11.17-49.16-10.75-6.89-.36-39.89.91-38.41 24.97-.43 18.96 26.61 26.07 29.7 26.89 36.46 10.97 48.65 12.79 63.12 29.58 17.14 22.25 7.9 48.3 4.35 55.44-19.08 37.49-68.42 34.44-69.26 34.42zm40.2 104.86c-70.03 51.72-171.69 79.25-258.49 79.25A469.127 469.127 0 0 1 2.83 327.46c-6.53-5.89-.77-13.96 7.17-9.47a637.37 637.37 0 0 0 316.88 84.12 630.22 630.22 0 0 0 241.59-49.55c11.78-5 21.77 7.8 10.12 16.38zm29.19-33.29c-8.96-11.52-59.28-5.38-81.81-2.69-6.79.77-7.94-5.12-1.79-9.47 40.07-28.17 105.88-20.1 113.44-10.63 7.55 9.47-2.05 75.41-39.56 106.91-5.76 4.87-11.27 2.3-8.71-4.1 8.44-21.25 27.39-68.49 18.43-80.02z"></path></svg>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- vuejs -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://vuejs.org/guide/introduction.html">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M356.9 64.3H280l-56 88.6-48-88.6H0L224 448 448 64.3h-91.1zm-301.2 32h53.8L224 294.5 338.4 96.3h53.8L224 384.5 55.7 96.3z"></path></svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">VueJs</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- tailwind -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://tailwindcss.com/docs/installation">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512" fill="currentColor"><path d="M128,204.6666718C145.0624084,136.2265015,187.7375946,102,256,102c102.3999939,0,115.2000122,77,166.3999939,89.8333282c34.1376038,8.5598297,64-4.2734985,89.6000061-38.5C494.9375916,221.7734985,452.2623901,256,384,256c-102.3999939,0-115.2000122-77-166.3999939-89.8333282C183.4624023,157.606842,153.6000061,170.4401703,128,204.6666718z M0,358.6666565C17.0623989,290.2265015,59.7375984,256,128,256c102.3999939,0,115.1999969,77,166.3999939,89.8333435c34.1376038,8.5598145,64-4.2734985,89.6000061-38.5C366.9375916,375.7734985,324.2623901,410,256,410c-102.3999939,0-115.1999969-77-166.3999939-89.8333435C55.4624023,311.606842,25.6000004,324.440155,0,358.6666565z"></path></svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">Tailwind</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- bootstrap -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"></path>
-                                    <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">Bootstrap</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- wordpress -->
-                <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
-                    <a href="https://wordpress.org/documentation/">
-                        <div class="flex space-x-2 items-center justify-center">
-                            <div class="flex flex-row">
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M12.633 7.653c0-.848-.305-1.435-.566-1.892l-.08-.13c-.317-.51-.594-.958-.594-1.48 0-.63.478-1.218 1.152-1.218.02 0 .039.002.058.003l.031.003A6.838 6.838 0 0 0 8 1.137 6.855 6.855 0 0 0 2.266 4.23c.16.005.313.009.442.009.717 0 1.828-.087 1.828-.087.37-.022.414.521.044.565 0 0-.371.044-.785.065l2.5 7.434 1.5-4.506-1.07-2.929c-.369-.022-.719-.065-.719-.065-.37-.022-.326-.588.043-.566 0 0 1.134.087 1.808.087.718 0 1.83-.087 1.83-.087.37-.022.413.522.043.566 0 0-.372.043-.785.065l2.48 7.377.684-2.287.054-.173c.27-.86.469-1.495.469-2.046zM1.137 8a6.864 6.864 0 0 0 3.868 6.176L1.73 5.206A6.837 6.837 0 0 0 1.137 8z"></path>
-                                    <path d="M6.061 14.583 8.121 8.6l2.109 5.78c.014.033.03.064.049.094a6.854 6.854 0 0 1-4.218.109zm7.96-9.876c.03.219.047.453.047.706 0 .696-.13 1.479-.522 2.458l-2.096 6.06a6.86 6.86 0 0 0 2.572-9.224z"></path>
-                                    <path fill-rule="evenodd" d="M0 8c0-4.411 3.589-8 8-8 4.41 0 8 3.589 8 8s-3.59 8-8 8c-4.411 0-8-3.589-8-8zm.367 0c0 4.209 3.424 7.633 7.633 7.633 4.208 0 7.632-3.424 7.632-7.633C15.632 3.79 12.208.367 8 .367 3.79.367.367 3.79.367 8z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex flex-row">
-                                <p class="my-4">Wordpress</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- work experience -->
-            <div id="work" class="flex max-w-[1000px] w-full mt-6">
-                <div class="flex flex-row">
-                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="currentColor"><g><rect fill="none" height="24" width="24"></rect></g><g><g><path d="M4,19V8h16v3.29c0.72,0.22,1.4,0.54,2,0.97V8c0-1.11-0.89-2-2-2h-4V4c0-1.11-0.89-2-2-2h-4C8.89,2,8,2.89,8,4v2H4 C2.89,6,2.01,6.89,2.01,8L2,19c0,1.11,0.89,2,2,2h7.68c-0.3-0.62-0.5-1.29-0.6-2H4z M10,4h4v2h-4V4z"></path><path d="M18,13c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S20.76,13,18,13z M19.65,20.35l-2.15-2.15V15h1v2.79l1.85,1.85 L19.65,20.35z"></path></g></g></svg>
-                </div>
-                <div class="dark:text-white flex flex-row font-bold text-2xl md:text-3xl text-black text-left md:text-left pl-2">
-                    Work Experiences
-                </div>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-2 gap-6 space-y-4">
-                <div>
-                    <p class="text-2xl font-bold pb-2">Feiwin </p>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <h2 class="pl-2"> PHP Full Stack Developer</h2>
-                        </div>
-                    </div>
-                        
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
-                        </div>
-                        <div class="flex flex-row pt-2">
-                            <p class="text-sm pl-2"> Oct 2023 - Present </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold pb-2">Summit Media </h2>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <h2 class="pl-2"> Sr. Software Engineer</h2>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
-                        </div>
-                        <div class="flex flex-row pt-2 pl-2">
-                            <p class="text-sm">June 20, 2022 - Oct 2023</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold pb-2">iACADEMY </h2>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <h2 class="pl-2"> Backend Developer</h2>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
-                        </div>
-                        <div class="flex flex-row pt-2 pl-2">
-                            <p class="text-sm">June 11, 2019 - Jue 2022</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold pb-2">Synergy88 Digital </h2>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <h2 class="pl-2"> Backend Developer</h2>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
-                        </div>
-                        <div class="flex flex-row pt-2 pl-2">
-                            <p class="text-sm">January 2018 - May 2019</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold pb-2">Contextus Tech. </h2>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <h2 class="pl-2">Associate Web Developer</h2>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
-                        </div>
-                        <div class="flex flex-row pt-2 pl-2">
-                            <p class="text-sm">June 20, 2022 - Oct 2023</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold pb-2">Zonelisting </h2>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <h2 class="pl-2">Jr. Software Engineer</h2>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
-                        </div>
-                        <div class="flex flex-row pt-2 pl-2">
-                            <p class="text-sm">July 2015 - February 2016</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold pb-2">ByteHeads Corp. </h2>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </div>
-                        <div class="flex flex-row">
-                            <h2 class="pl-2">Jr. Android Developer</h2>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="flex flex-row">
-                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
-                        </div>
-                        <div class="flex flex-row pt-2 pl-2">
-                            <p class="text-sm">May 2015 - July 2015</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- work previous projects -->
-            <div id="previous" class="flex max-w-[1000px] w-full mt-6">
-                <div class="flex flex-row pt-1">
-                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" stroke="currentColor" stroke-width="2" d="M9,15 L9,23 L1,23 L1,15 L9,15 Z M23,15 L23,23 L15,23 L15,15 L23,15 Z M9,1 L9,9 L1,9 L1,1 L9,1 Z M23,1 L23,9 L15,9 L15,1 L23,1 Z"></path></svg>
-                </div>
-                <div class="flex flex-row pl-3">
-                    <div class="dark:text-white font-bold text-2xl md:text-3xl text-black text-left md:text-left">Previous Projects</div>
-                </div>
-            </div>
-            <div class="grid gap-2 grid-cols-2 md:grid-cols-3 justify-center items-center">
-                <!-- yummy -->
-                <a href="https://www.yummy.ph/">
-                    <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
-                        <div class="sm:w-32 md:w-72">
-                            <img src="https://images.yummy.ph/yummy/uploads/2023/09/yummy-logo.svg" alt="">
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
-                            <div class="flex justify-between w-full">
-                                <div class="font-normal">
-                                    <p class="text-sm">Yummy</p>
-                                    <p class="text-xs text-ellipsis">Filipino Food & Pinoy Recipes: Pasta, Vegetables, Meat & Dessert Recipes.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
                 
-                <!-- iacademy portal -->
-                <a href="https://portalv2.iacademy.edu.ph/">
-                    <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
-                        <img src="data:image/jpeg;base64,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iICIiAiIgIiICIiBqLryNo014XDaPUPndG+CttIwG5gd45HpMnbO0V0untvYEipC26PpOfs1qPEscAeZE7W0SG5biO+lb1g5OArsrEY5c0HHyjWaGu7c3xvCuxLVGTjeQ5UkeODgjPiAfCShDujepr0+qrXfLnXITeezdF+VLl98byj6Slk58qkEk/SbU2U6LVWVfTr09rrwzghCQceOOf4TJ1+hS9AjjIDo4wSpVkcMrAjkQQJkkRMmmh0nRvQHToOyrsBCWdsRm12wD25t+kWJ472czejlNIOiekHdxZ2ec/Ju3s+S8847He3d3+HGPKbp68qV5ZBHA4Iz7j4RIr7am1K3vu1wZi+jtFdFYrscWU157cAhcZsJcDjj5qsywKLlsRXUhldQysORBGQROvR6ZKakqQYStQijngAYA4z52fo69PUtVYwiDCrkndGSd0Z8BnAHgIkhodFsvT36vaPbU12/PUrl61c4+S1cOInf0U7jayhSWp0+qFdJJLbgNNbtUGPMK7MB7hw8Jkaro7RZY9pa5TaVLivVXUo26oUEqjAcgBNhotJXRWtdahFXOFAwOJyT5kk5J8cxMmkd6S1F9fpANPXqv+l1Z7OxlVR85R3ssrcfD8ZudiafcRs6avSktxStlYMABhiVVePP8o2lsarUujubFatXVWrvsobDFSQShGR3R+U7dn7NWgMFe194g/OX2XkehcnH4R9hHOlGkst2jojU27bVo9ddUTwUutulG4/8LBmU+ufCYd5uv1uy9VajU51llNWnb6Va/IdSXdwOG8zKMe5VHvMmVmhra5LyO/XXZWpycBbGRmGOR41r+U41Wgrtel3GW09htrOSN1jW9eTjn3bGHH3yYtpGn3rdIl9T1WLvJYjIynxBGDIxodNqL7vkmoIerQPW5fgW1h+lR2g8N0DLf5mUHlwkuxMenRolllgHet3N45JB3BgYHhzkRKWQJzESEkREBERAREQEREBERAREQEREBERAQYiBp98HV4HaArneYizcfucK1yNzdHBs+/38Z8asP2rf4m/2lXZY3uz3O7vZx3Rx3858MeU3WIxA1W1Ppje7Qp2b7u5v538jGdzjnHLPDnGvcrRX2gZnIUFUD4L7hyWNfEKOJ/AY44E2uIxCHTohipBkthF7xBBbhzIPEH1nfEQkiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiB/9k=" alt="" class="w-72 rounded-lg">
-                        <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
-                            <div class="flex justify-between w-full">
-                                <div class="font-normal">
-                                    <p class="text-sm">iACADEMY Portal</p>
-                                    <p class="text-xs text-ellipsis">Integrated System for Student and Employees in iACADEMY.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
 
-                <!-- Belo Shop -->
-                <a href="https://shop.belomed.com/">
-                    <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
-                        <img src="https://shop.belomed.com/web/images/lg_belo shop.png" alt="">
-                        <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
-                            <div class="flex justify-between w-full">
-                                <div class="font-normal">
-                                    <p class="text-sm">Belo Shop</p>
-                                    <p class="text-xs text-ellipsis">E-Commerce Shop own by Belo Medical Group.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+    
 
-                <!-- image 4 -->
-                <a href="https://portal.dpap.deped.gov.ph/">
-                    <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
-                        <img src="data:image/png;base64,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" alt="" class="w-72 rounded-lg">
-                        <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
-                            <div class="flex justify-between w-full">
-                                <div class="font-normal">
-                                    <p class="text-sm">DPAP DEPED</p>
-                                    <p class="text-xs text-ellipsis">DepEd Partnership Assistance Portal.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- image 5 -->
-                <a href="https://maze-iacademy.ph/#/">
-                    <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
-                        <img src="https://maze-iacademy.ph/images/mazemain.png" alt="" class="w-72 rounded-lg">
-                        <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
-                            <div class="flex justify-between w-full">
-                                <div class="font-normal">
-                                    <p class="text-sm">Maze</p>
-                                    <p class="text-xs text-ellipsis">Social Distance Application.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- image 6 -->
-                <a href="https://firstdistrictantipolo.com/#/">
-                    <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
-                        <img src="data:image/jpeg;base64,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" alt="" class="w-72 rounded-lg">
-                        <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
-                            <div class="flex justify-between w-full">
-                                <div class="font-normal">
-                                    <p class="text-sm">AMS (Ayuda Management System)</p>
-                                    <p class="text-xs text-ellipsis">Money Dessimination System in Municipality of Antipolo, Philippines</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- contact us -->
-            <div id="contact" class="grid md:grid-cols-2 gap-4">
-                <div class="h-[10rem]">
+                <!-- home -->
+                <div id="home" class="flex flex-col justify-center h-full max-w-[1000px]">
+                    <h2 class="text-4xl sm:text-7xl font-bold text-gray">    <p>Hi. I'm Mark Villudo</p></h2>
+                    <p class="text-gray-500 mt-2"> A passionate software developer with 9yrs experience in building API's, CMS and responsive web application.</p>
+                </div>
+                <!-- skills -->
+                <div id="skills" class="grid grid-rows-2 max-w-[1000px]">
                     <div class="flex">
                         <div class="flex flex-row">
-                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16" fill="currentColor"><path fill="currentColor" d="M12.5 9c-1 0-1.8 0.4-2.4 1l-3.2-1.7c0.1-0.3 0.1-0.5 0.1-0.8 0-0.2 0-0.3 0-0.4l2.9-1.3c0.6 0.7 1.5 1.2 2.6 1.2 1.9 0 3.5-1.6 3.5-3.5s-1.6-3.5-3.5-3.5-3.5 1.6-3.5 3.5c0 0.2 0 0.3 0 0.4l-2.9 1.3c-0.6-0.7-1.5-1.2-2.6-1.2-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5c1 0 1.8-0.4 2.4-1l3.1 1.7c0 0.3 0 0.5 0 0.8 0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zM12.5 1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5c0-1.4 1.1-2.5 2.5-2.5zM3.5 10c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5c0 1.4-1.1 2.5-2.5 2.5zM12.5 15c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5c0 1.4-1.1 2.5-2.5 2.5z"></path></svg>
+                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><defs></defs><polygon points="20.17 19 17.58 21.59 19 23 23 19 19 15 17.58 16.41 20.17 19"></polygon><polygon points="11.83 19 14.42 16.41 13 15 9 19 13 23 14.42 21.59 11.83 19"></polygon><circle cx="9" cy="8" r="1"></circle><circle cx="6" cy="8" r="1"></circle><path d="M28,4H4c-1.1028,0-2,.8975-2,2V26c0,1.1025,.8972,2,2,2H28c1.1028,0,2-.8975,2-2V6c0-1.1025-.8972-2-2-2Zm0,2v4H4V6H28ZM4,26V12H28v14H4Z"></path><rect id="_Transparent_Rectangle_" data-name="&amp;lt;Transparent Rectangle&amp;gt;" class="cls-1" width="32" height="32" style="fill: none"></rect></svg>
                         </div>
-                        <div class="flex flex-row">
-                            <p class="text-md text-2xl md:text-3xl font-bold pl-3">Lets connect</p>
+                        <div class="flex flex-row pl-2">
+                            <div class="dark:text-white font-bold text-2xl md:text-3xl text-black">Technology used</div>
                         </div>
                     </div>
-                    <div class="text-sm">
-                        <div class="flex">
-                            <div class="flex flex-row font-normal w-4 pt-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="oe se axp"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"></path></svg>
+                
+                    <div class="flex text-gray-500">
+                        I enjoy diving into and learning new things. Here's a list of technologies I've worked with
+                    </div>
+                </div>
+                <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-4 text-center pb-8 dark:fill-current dark:text-white">
+                    <!-- php -->
+                    <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://www.php.net/docs.php">
+                            <div class="flex items-center justify-center">
+                                <svg class="w-12 h-12" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M320 104.5c171.4 0 303.2 72.2 303.2 151.5S491.3 407.5 320 407.5c-171.4 0-303.2-72.2-303.2-151.5S148.7 104.5 320 104.5m0-16.8C143.3 87.7 0 163 0 256s143.3 168.3 320 168.3S640 349 640 256 496.7 87.7 320 87.7zM218.2 242.5c-7.9 40.5-35.8 36.3-70.1 36.3l13.7-70.6c38 0 63.8-4.1 56.4 34.3zM97.4 350.3h36.7l8.7-44.8c41.1 0 66.6 3 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7h-70.7L97.4 350.3zm185.7-213.6h36.5l-8.7 44.8c31.5 0 60.7-2.3 74.8 10.7 14.8 13.6 7.7 31-8.3 113.1h-37c15.4-79.4 18.3-86 12.7-92-5.4-5.8-17.7-4.6-47.4-4.6l-18.8 96.6h-36.5l32.7-168.6zM505 242.5c-8 41.1-36.7 36.3-70.1 36.3l13.7-70.6c38.2 0 63.8-4.1 56.4 34.3zM384.2 350.3H421l8.7-44.8c43.2 0 67.1 2.5 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7H417l-32.8 168.7z"></path></svg>
                             </div>
-                            <div class="flex flex-row font-normal justify-center pl-2">
-                                <a href="https://en.wikipedia.org/wiki/Santa_Cruz,_Laguna">
-                                    <p class="pt-2 font-normal"> Sta Cruz Laguna </p>
+                        </a>
+                    </div>
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://laravel.com/docs/10.x/readme">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>Laravel</title><path d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z"></path></svg>
+                                </div>
+                                <div class="flex flex-row">
+                                        <p class="my-4">Laravel</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- mysql -->
+                    <div class="shadow-md shadow-2 rounded-lg hover:border hover:border-bg-600 hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://dev.mysql.com/doc/">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>MySQL</title><path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"></path></svg>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- mongodb -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M13.74 4.23c-.84-1-1.57-2-1.71-2.22H12c-.14.21-.87 1.22-1.71 2.22-7.2 9.19 1.14 15.39 1.14 15.39l.07.05c.06.95.22 2.33.22 2.33h.62s.15-1.37.21-2.33l.07-.06s8.32-6.19 1.12-15.38zM12 19.48a3.48 3.48 0 0 1-.48-.48L12 9l.45 10a3.57 3.57 0 0 1-.45.48z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <a href="https://www.mongodb.com/docs/">
+                                    <p class="my-4">MongoDB</p>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="text-sm">
-                        <div class="flex">
-                            <div class="flex flex-row font-normal w-4 pt-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="oe se axp"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>                            </div>
-                            <div class="flex flex-row font-normal justify-center pl-2">
-                                <p class="pt-2 font-normal"> markanthony.villudo@gmail.com </p>
+                    <!-- redis -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <div class="flex space-x-2 items-center justify-center">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 24" fill="currentColor"><path d="m27.994 14.729c-.012.267-.365.566-1.091.945-1.495.778-9.236 3.967-10.883 4.821-.589.419-1.324.67-2.116.67-.641 0-1.243-.164-1.768-.452l.019.01c-1.304-.622-9.539-3.95-11.023-4.659-.741-.35-1.119-.653-1.132-.933v2.83c0 .282.39.583 1.132.933 1.484.709 9.722 4.037 11.023 4.659.504.277 1.105.44 1.744.44.795 0 1.531-.252 2.132-.681l-.011.008c1.647-.859 9.388-4.041 10.883-4.821.76-.396 1.096-.7 1.096-.982s0-2.791 0-2.791z"></path><path d="m27.992 10.115c-.013.267-.365.565-1.09.944-1.495.778-9.236 3.967-10.883 4.821-.59.421-1.326.672-2.121.672-.639 0-1.24-.163-1.763-.449l.019.01c-1.304-.627-9.539-3.955-11.023-4.664-.741-.35-1.119-.653-1.132-.933v2.83c0 .282.39.583 1.132.933 1.484.709 9.721 4.037 11.023 4.659.506.278 1.108.442 1.749.442.793 0 1.527-.251 2.128-.677l-.011.008c1.647-.859 9.388-4.043 10.883-4.821.76-.397 1.096-.7 1.096-.984s0-2.791 0-2.791z"></path><path d="m27.992 5.329c.014-.285-.358-.534-1.107-.81-1.451-.533-9.152-3.596-10.624-4.136-.528-.242-1.144-.383-1.794-.383-.734 0-1.426.18-2.035.498l.024-.012c-1.731.622-9.924 3.835-11.381 4.405-.729.287-1.086.552-1.073.834v2.83c0 .282.39.583 1.132.933 1.484.709 9.721 4.038 11.023 4.66.504.277 1.105.439 1.744.439.795 0 1.531-.252 2.133-.68l-.011.008c1.647-.859 9.388-4.043 10.883-4.821.76-.397 1.096-.7 1.096-.984s0-2.791 0-2.791h-.009zm-17.967 2.684 6.488-.996-1.96 2.874zm14.351-2.588-4.253 1.68-3.835-1.523 4.246-1.679 3.838 1.517zm-11.265-2.785-.628-1.157 1.958.765 1.846-.604-.499 1.196 1.881.7-2.426.252-.543 1.311-.879-1.457-2.8-.252 2.091-.754zm-4.827 1.632c1.916 0 3.467.602 3.467 1.344s-1.559 1.344-3.467 1.344-3.474-.603-3.474-1.344 1.553-1.344 3.474-1.344z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <a href="https://www.mongodb.com/docs/">
+                                    <p class="my-4">Redis</p>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="flex pt-4 gap-3">
-                        <div class="flex flex-row">
-                            <a href="https://ph.linkedin.com/in/mark-anthony-villudo-781516108">
-                                <!-- Linkedin -->
-                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6S15.302.4 10 .4zM7.65 13.979H5.706V7.723H7.65v6.256zm-.984-7.024c-.614 0-1.011-.435-1.011-.973 0-.549.409-.971 1.036-.971s1.011.422 1.023.971c0 .538-.396.973-1.048.973zm8.084 7.024h-1.944v-3.467c0-.807-.282-1.355-.985-1.355-.537 0-.856.371-.997.728-.052.127-.065.307-.065.486v3.607H8.814v-4.26c0-.781-.025-1.434-.051-1.996h1.689l.089.869h.039c.256-.408.883-1.01 1.932-1.01 1.279 0 2.238.857 2.238 2.699v3.699z"></path></svg>
-                            </a>
-                        </div>
-                        <div class="flex flex-row">
-                            <a href="https://www.facebook.com/programac14">
-                                <!-- Facebook -->
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                    <!-- html -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://www.w3schools.com/html/">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg fill="currentColor" class="w-8 h-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                        <title>html-five2</title>
+                                        <path d="M1.892 0l2.567 28.801 11.524 3.199 11.554-3.204 2.572-28.796h-28.216zM25.336 26.963l-9.288 2.574v0.015l-0.024-0.007-0.024 0.007v-0.015l-9.288-2.574-2.195-24.609h23.015l-2.195 24.609zM20.336 16.569l-0.408 4.58-3.944 1.065-3.933-1.060-0.252-2.82h-3.547l0.495 5.547 7.252 2.006 7.229-2.006 0.97-10.844h-12.874l-0.322-3.617h13.517l0.316-3.532h-17.694l0.953 10.681z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex flex-row">
+                                        <p class="my-4">HTML</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- css3 -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M480 32l-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"></path></svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">CSS3</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- javascript -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://javascript.info/">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8 rounded-3xl" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"></path></svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">Javascript</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- reactjs -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://legacy.reactjs.org/tutorial/tutorial.html">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <g>
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path fill-rule="nonzero" d="M14.448 16.24a21.877 21.877 0 0 1-1.747 2.175c1.672 1.623 3.228 2.383 4.09 1.884.864-.498.983-2.225.414-4.484-.853.19-1.78.334-2.757.425zm-1.31.087a27.512 27.512 0 0 1-2.276 0c.377.492.758.948 1.138 1.364.38-.416.76-.872 1.138-1.364zm5.04-7.894c2.665.764 4.405 2.034 4.405 3.567 0 1.533-1.74 2.803-4.405 3.567.67 2.69.441 4.832-.886 5.598-1.328.767-3.298-.105-5.292-2.03-1.994 1.925-3.964 2.797-5.292 2.03-1.327-.766-1.557-2.908-.886-5.598-2.665-.764-4.405-2.034-4.405-3.567 0-1.533 1.74-2.803 4.405-3.567-.67-2.69-.441-4.832.886-5.598 1.328-.767 3.298.105 5.292 2.03 1.994-1.925 3.964-2.797 5.292-2.03 1.327.766 1.557 2.908.886 5.598zm-.973-.248c.57-2.26.45-3.986-.413-4.484-.863-.499-2.419.261-4.09 1.884.591.643 1.179 1.374 1.746 2.175.978.09 1.904.234 2.757.425zm-10.41 7.63c-.57 2.26-.45 3.986.413 4.484.863.499 2.419-.261 4.09-1.884a21.877 21.877 0 0 1-1.746-2.175 21.877 21.877 0 0 1-2.757-.425zm4.067-8.142a27.512 27.512 0 0 1 2.276 0A20.523 20.523 0 0 0 12 6.31c-.38.416-.76.872-1.138 1.364zm-1.31.087A21.877 21.877 0 0 1 11.3 5.585C9.627 3.962 8.07 3.202 7.209 3.701c-.864.498-.983 2.225-.414 4.484.853-.19 1.78-.334 2.757-.425zm4.342 7.52A25.368 25.368 0 0 0 15.787 12a25.368 25.368 0 0 0-1.893-3.28 25.368 25.368 0 0 0-3.788 0A25.368 25.368 0 0 0 8.213 12a25.368 25.368 0 0 0 1.893 3.28 25.368 25.368 0 0 0 3.788 0zm1.284-.131c.615-.08 1.2-.183 1.75-.304a20.523 20.523 0 0 0-.612-1.667 27.512 27.512 0 0 1-1.138 1.97zM8.822 8.85c-.615.08-1.2.183-1.75.304.17.536.374 1.094.612 1.667a27.512 27.512 0 0 1 1.138-1.97zm-1.75 5.994c.55.121 1.135.223 1.75.304a27.512 27.512 0 0 1-1.138-1.97c-.238.572-.442 1.13-.612 1.666zm-.978-.245c.261-.834.6-1.708 1.01-2.6-.41-.892-.749-1.766-1.01-2.6-2.242.637-3.677 1.604-3.677 2.6s1.435 1.963 3.677 2.6zm10.834-5.445c-.55-.121-1.135-.223-1.75-.304a27.511 27.511 0 0 1 1.138 1.97c.238-.572.442-1.13.612-1.666zm.978.245c-.261.834-.6 1.708-1.01 2.6.41.892.749 1.766 1.01 2.6 2.242-.637 3.677-1.604 3.677-2.6s-1.435-1.963-3.677-2.6zM12 13.88a1.88 1.88 0 1 1 0-3.76 1.88 1.88 0 0 1 0 3.76z"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">ReactJS</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- github -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://github.com">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">Github</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- nodejs -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://nodejs.org/en/learn">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24"><path d="M12 21.985c-.275 0-.532-.074-.772-.202l-2.439-1.448c-.365-.203-.182-.277-.072-.314.496-.165.588-.201 1.101-.493.056-.037.129-.02.185.017l1.87 1.12c.074.036.166.036.221 0l7.319-4.237c.074-.036.11-.11.11-.202V7.768c0-.091-.036-.165-.11-.201l-7.319-4.219c-.073-.037-.165-.037-.221 0L4.552 7.566c-.073.036-.11.129-.11.201v8.457c0 .073.037.166.11.202l2 1.157c1.082.548 1.762-.095 1.762-.735V8.502c0-.11.091-.221.22-.221h.936c.108 0 .22.092.22.221v8.347c0 1.449-.788 2.294-2.164 2.294-.422 0-.752 0-1.688-.46l-1.925-1.099a1.55 1.55 0 0 1-.771-1.34V7.786c0-.55.293-1.064.771-1.339l7.316-4.237a1.637 1.637 0 0 1 1.544 0l7.317 4.237c.479.274.771.789.771 1.339v8.458c0 .549-.293 1.063-.771 1.34l-7.317 4.236c-.241.11-.516.165-.773.165zm2.256-5.816c-3.21 0-3.87-1.468-3.87-2.714 0-.11.092-.221.22-.221h.954c.11 0 .201.073.201.184.147.971.568 1.449 2.514 1.449 1.54 0 2.202-.35 2.202-1.175 0-.477-.185-.825-2.587-1.063-1.999-.2-3.246-.643-3.246-2.238 0-1.485 1.247-2.366 3.339-2.366 2.347 0 3.503.809 3.649 2.568a.297.297 0 0 1-.056.165c-.037.036-.091.073-.146.073h-.953a.212.212 0 0 1-.202-.164c-.221-1.012-.789-1.34-2.292-1.34-1.689 0-1.891.587-1.891 1.027 0 .531.237.696 2.514.99 2.256.293 3.32.715 3.32 2.294-.02 1.615-1.339 2.531-3.67 2.531z"></path></svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">NodeJs</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- aws -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://docs.aws.amazon.com/">
+                            <div class="flex items-center justify-center">
+                                <div class="flex pt-3">
+                                    <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M180.41 203.01c-.72 22.65 10.6 32.68 10.88 39.05a8.164 8.164 0 0 1-4.1 6.27l-12.8 8.96a10.66 10.66 0 0 1-5.63 1.92c-.43-.02-8.19 1.83-20.48-25.61a78.608 78.608 0 0 1-62.61 29.45c-16.28.89-60.4-9.24-58.13-56.21-1.59-38.28 34.06-62.06 70.93-60.05 7.1.02 21.6.37 46.99 6.27v-15.62c2.69-26.46-14.7-46.99-44.81-43.91-2.4.01-19.4-.5-45.84 10.11-7.36 3.38-8.3 2.82-10.75 2.82-7.41 0-4.36-21.48-2.94-24.2 5.21-6.4 35.86-18.35 65.94-18.18a76.857 76.857 0 0 1 55.69 17.28 70.285 70.285 0 0 1 17.67 52.36l-.01 69.29zM93.99 235.4c32.43-.47 46.16-19.97 49.29-30.47 2.46-10.05 2.05-16.41 2.05-27.4-9.67-2.32-23.59-4.85-39.56-4.87-15.15-1.14-42.82 5.63-41.74 32.26-1.24 16.79 11.12 31.4 29.96 30.48zm170.92 23.05c-7.86.72-11.52-4.86-12.68-10.37l-49.8-164.65c-.97-2.78-1.61-5.65-1.92-8.58a4.61 4.61 0 0 1 3.86-5.25c.24-.04-2.13 0 22.25 0 8.78-.88 11.64 6.03 12.55 10.37l35.72 140.83 33.16-140.83c.53-3.22 2.94-11.07 12.8-10.24h17.16c2.17-.18 11.11-.5 12.68 10.37l33.42 142.63L420.98 80.1c.48-2.18 2.72-11.37 12.68-10.37h19.72c.85-.13 6.15-.81 5.25 8.58-.43 1.85 3.41-10.66-52.75 169.9-1.15 5.51-4.82 11.09-12.68 10.37h-18.69c-10.94 1.15-12.51-9.66-12.68-10.75L328.67 110.7l-32.78 136.99c-.16 1.09-1.73 11.9-12.68 10.75h-18.3zm273.48 5.63c-5.88.01-33.92-.3-57.36-12.29a12.802 12.802 0 0 1-7.81-11.91v-10.75c0-8.45 6.2-6.9 8.83-5.89 10.04 4.06 16.48 7.14 28.81 9.6 36.65 7.53 52.77-2.3 56.72-4.48 13.15-7.81 14.19-25.68 5.25-34.95-10.48-8.79-15.48-9.12-53.13-21-4.64-1.29-43.7-13.61-43.79-52.36-.61-28.24 25.05-56.18 69.52-55.95 12.67-.01 46.43 4.13 55.57 15.62 1.35 2.09 2.02 4.55 1.92 7.04v10.11c0 4.44-1.62 6.66-4.87 6.66-7.71-.86-21.39-11.17-49.16-10.75-6.89-.36-39.89.91-38.41 24.97-.43 18.96 26.61 26.07 29.7 26.89 36.46 10.97 48.65 12.79 63.12 29.58 17.14 22.25 7.9 48.3 4.35 55.44-19.08 37.49-68.42 34.44-69.26 34.42zm40.2 104.86c-70.03 51.72-171.69 79.25-258.49 79.25A469.127 469.127 0 0 1 2.83 327.46c-6.53-5.89-.77-13.96 7.17-9.47a637.37 637.37 0 0 0 316.88 84.12 630.22 630.22 0 0 0 241.59-49.55c11.78-5 21.77 7.8 10.12 16.38zm29.19-33.29c-8.96-11.52-59.28-5.38-81.81-2.69-6.79.77-7.94-5.12-1.79-9.47 40.07-28.17 105.88-20.1 113.44-10.63 7.55 9.47-2.05 75.41-39.56 106.91-5.76 4.87-11.27 2.3-8.71-4.1 8.44-21.25 27.39-68.49 18.43-80.02z"></path></svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- vuejs -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://vuejs.org/guide/introduction.html">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M356.9 64.3H280l-56 88.6-48-88.6H0L224 448 448 64.3h-91.1zm-301.2 32h53.8L224 294.5 338.4 96.3h53.8L224 384.5 55.7 96.3z"></path></svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">VueJs</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- tailwind -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://tailwindcss.com/docs/installation">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512" fill="currentColor"><path d="M128,204.6666718C145.0624084,136.2265015,187.7375946,102,256,102c102.3999939,0,115.2000122,77,166.3999939,89.8333282c34.1376038,8.5598297,64-4.2734985,89.6000061-38.5C494.9375916,221.7734985,452.2623901,256,384,256c-102.3999939,0-115.2000122-77-166.3999939-89.8333282C183.4624023,157.606842,153.6000061,170.4401703,128,204.6666718z M0,358.6666565C17.0623989,290.2265015,59.7375984,256,128,256c102.3999939,0,115.1999969,77,166.3999939,89.8333435c34.1376038,8.5598145,64-4.2734985,89.6000061-38.5C366.9375916,375.7734985,324.2623901,410,256,410c-102.3999939,0-115.1999969-77-166.3999939-89.8333435C55.4624023,311.606842,25.6000004,324.440155,0,358.6666565z"></path></svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">Tailwind</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- bootstrap -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"></path>
+                                        <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">Bootstrap</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- wordpress -->
+                    <div class="shadow-md shadow-2 rounded-lg hover hover:border hover:border-bg-600 hover:fill-current hover:text-white hover:bg-gray-900 hover:scale-110 duration-500 transition dark:border dark:border-1">
+                        <a href="https://wordpress.org/documentation/">
+                            <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex flex-row">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M12.633 7.653c0-.848-.305-1.435-.566-1.892l-.08-.13c-.317-.51-.594-.958-.594-1.48 0-.63.478-1.218 1.152-1.218.02 0 .039.002.058.003l.031.003A6.838 6.838 0 0 0 8 1.137 6.855 6.855 0 0 0 2.266 4.23c.16.005.313.009.442.009.717 0 1.828-.087 1.828-.087.37-.022.414.521.044.565 0 0-.371.044-.785.065l2.5 7.434 1.5-4.506-1.07-2.929c-.369-.022-.719-.065-.719-.065-.37-.022-.326-.588.043-.566 0 0 1.134.087 1.808.087.718 0 1.83-.087 1.83-.087.37-.022.413.522.043.566 0 0-.372.043-.785.065l2.48 7.377.684-2.287.054-.173c.27-.86.469-1.495.469-2.046zM1.137 8a6.864 6.864 0 0 0 3.868 6.176L1.73 5.206A6.837 6.837 0 0 0 1.137 8z"></path>
+                                        <path d="M6.061 14.583 8.121 8.6l2.109 5.78c.014.033.03.064.049.094a6.854 6.854 0 0 1-4.218.109zm7.96-9.876c.03.219.047.453.047.706 0 .696-.13 1.479-.522 2.458l-2.096 6.06a6.86 6.86 0 0 0 2.572-9.224z"></path>
+                                        <path fill-rule="evenodd" d="M0 8c0-4.411 3.589-8 8-8 4.41 0 8 3.589 8 8s-3.59 8-8 8c-4.411 0-8-3.589-8-8zm.367 0c0 4.209 3.424 7.633 7.633 7.633 4.208 0 7.632-3.424 7.632-7.633C15.632 3.79 12.208.367 8 .367 3.79.367.367 3.79.367 8z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex flex-row">
+                                    <p class="my-4">Wordpress</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- work experience -->
+                <div id="work" class="flex max-w-[1000px] w-full mt-6">
+                    <div class="flex flex-row">
+                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="currentColor"><g><rect fill="none" height="24" width="24"></rect></g><g><g><path d="M4,19V8h16v3.29c0.72,0.22,1.4,0.54,2,0.97V8c0-1.11-0.89-2-2-2h-4V4c0-1.11-0.89-2-2-2h-4C8.89,2,8,2.89,8,4v2H4 C2.89,6,2.01,6.89,2.01,8L2,19c0,1.11,0.89,2,2,2h7.68c-0.3-0.62-0.5-1.29-0.6-2H4z M10,4h4v2h-4V4z"></path><path d="M18,13c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S20.76,13,18,13z M19.65,20.35l-2.15-2.15V15h1v2.79l1.85,1.85 L19.65,20.35z"></path></g></g></svg>
+                    </div>
+                    <div class="dark:text-white flex flex-row font-bold text-2xl md:text-3xl text-black text-left md:text-left pl-2">
+                        Work Experiences
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-6 space-y-4">
+                    <div>
+                        <p class="text-2xl font-bold pb-2">Feiwin </p>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                            </a>
+                            </div>
+                            <div class="flex flex-row">
+                                <h2 class="pl-2"> PHP Full Stack Developer</h2>
+                            </div>
                         </div>
-                        <div class="flex flex-row">
-                            <a href="https://github.com/MarkVilludo">
-                                <!-- Github -->
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                            
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
+                            </div>
+                            <div class="flex flex-row pt-2">
+                                <p class="text-sm pl-2"> Oct 2023 - Present </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold pb-2">Summit Media </h2>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                            </a>
+                            </div>
+                            <div class="flex flex-row">
+                                <h2 class="pl-2"> Sr. Software Engineer</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
+                            </div>
+                            <div class="flex flex-row pt-2 pl-2">
+                                <p class="text-sm">June 20, 2022 - Oct 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold pb-2">iACADEMY </h2>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <h2 class="pl-2"> Backend Developer</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
+                            </div>
+                            <div class="flex flex-row pt-2 pl-2">
+                                <p class="text-sm">June 11, 2019 - Jue 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold pb-2">Synergy88 Digital </h2>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <h2 class="pl-2"> Backend Developer</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
+                            </div>
+                            <div class="flex flex-row pt-2 pl-2">
+                                <p class="text-sm">January 2018 - May 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold pb-2">Contextus Tech. </h2>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <h2 class="pl-2">Associate Web Developer</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
+                            </div>
+                            <div class="flex flex-row pt-2 pl-2">
+                                <p class="text-sm">June 20, 2022 - Oct 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold pb-2">Zonelisting </h2>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <h2 class="pl-2">Jr. Software Engineer</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
+                            </div>
+                            <div class="flex flex-row pt-2 pl-2">
+                                <p class="text-sm">July 2015 - February 2016</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold pb-2">ByteHeads Corp. </h2>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <h2 class="pl-2">Jr. Android Developer</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"></path></svg>
+                            </div>
+                            <div class="flex flex-row pt-2 pl-2">
+                                <p class="text-sm">May 2015 - July 2015</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                   <span class="text-2xl md:text-3xl font-bold"> Send a message </span> 
-                   <form action="#">
-                    <div class="grid md:grid-rows-2 mt-4 gap-4">
-                            <div class="hover:bg-gray-200">
-                                <span class="block font-normal text-sm">First name</span>
-                                <input id="fname" type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                                    focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                                    invalid:border-pink-500 invalid:text-pink-600
-                                    focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-                                "/>
+
+                <!-- work previous projects -->
+                <div id="previous" class="flex max-w-[1000px] w-full mt-6">
+                    <div class="flex flex-row pt-1">
+                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" stroke="currentColor" stroke-width="2" d="M9,15 L9,23 L1,23 L1,15 L9,15 Z M23,15 L23,23 L15,23 L15,15 L23,15 Z M9,1 L9,9 L1,9 L1,1 L9,1 Z M23,1 L23,9 L15,9 L15,1 L23,1 Z"></path></svg>
+                    </div>
+                    <div class="flex flex-row pl-3">
+                        <div class="dark:text-white font-bold text-2xl md:text-3xl text-black text-left md:text-left">Previous Projects</div>
+                    </div>
+                </div>
+                <div class="grid gap-2 grid-cols-2 md:grid-cols-3 justify-center items-center">
+                    <!-- yummy -->
+                    <a href="https://www.yummy.ph/">
+                        <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
+                            <div class="sm:w-32 md:w-72">
+                                <img src="https://images.yummy.ph/yummy/uploads/2023/09/yummy-logo.svg" alt="">
                             </div>
-                            <div class="hover:bg-gray-200">
-                                <span class="block font-normal text-sm">Last name</span>
-                                <input type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                                    focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                                    invalid:border-pink-500 invalid:text-pink-600
-                                    focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-                                "/>
+                            <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
+                                <div class="flex justify-between w-full">
+                                    <div class="font-normal">
+                                        <p class="text-sm">Yummy</p>
+                                        <p class="text-xs text-ellipsis">Filipino Food & Pinoy Recipes: Pasta, Vegetables, Meat & Dessert Recipes.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hover:bg-gray-200">
-                                <span class="block font-normal text-sm">Email</span>
-                                <input type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                                    focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                                    invalid:border-pink-500 invalid:text-pink-600
-                                    focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-                                "/>
-                            </div>
-                            <div class="hover:bg-gray-200">
-                                <span class="block font-normal text-sm">Message</span>
-                                <textarea class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                                    focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                                    invalid:border-pink-500 invalid:text-pink-600
-                                    focus:invalid:border-pink-500 focus:invalid:ring-pink-500"> </textarea>
-                            </div>
-                            <button id="access" class="bg-blue-700 font-bold text-white rounded-lg p-4 justify-center border border-b-4 border-b-blue-900 hover:border-t-blue-900 hover:border-t-4 hover:border-b-0 duration-100 trasition-all">Send message</button>
                         </div>
-                    </form>
+                    </a>
+                    
+                    <!-- iacademy portal -->
+                    <a href="https://portalv2.iacademy.edu.ph/">
+                        <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
+                            <img src="data:image/jpeg;base64,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iICIiAiIgIiICIiBqLryNo014XDaPUPndG+CttIwG5gd45HpMnbO0V0untvYEipC26PpOfs1qPEscAeZE7W0SG5biO+lb1g5OArsrEY5c0HHyjWaGu7c3xvCuxLVGTjeQ5UkeODgjPiAfCShDujepr0+qrXfLnXITeezdF+VLl98byj6Slk58qkEk/SbU2U6LVWVfTr09rrwzghCQceOOf4TJ1+hS9AjjIDo4wSpVkcMrAjkQQJkkRMmmh0nRvQHToOyrsBCWdsRm12wD25t+kWJ472czejlNIOiekHdxZ2ec/Ju3s+S8847He3d3+HGPKbp68qV5ZBHA4Iz7j4RIr7am1K3vu1wZi+jtFdFYrscWU157cAhcZsJcDjj5qsywKLlsRXUhldQysORBGQROvR6ZKakqQYStQijngAYA4z52fo69PUtVYwiDCrkndGSd0Z8BnAHgIkhodFsvT36vaPbU12/PUrl61c4+S1cOInf0U7jayhSWp0+qFdJJLbgNNbtUGPMK7MB7hw8Jkaro7RZY9pa5TaVLivVXUo26oUEqjAcgBNhotJXRWtdahFXOFAwOJyT5kk5J8cxMmkd6S1F9fpANPXqv+l1Z7OxlVR85R3ssrcfD8ZudiafcRs6avSktxStlYMABhiVVePP8o2lsarUujubFatXVWrvsobDFSQShGR3R+U7dn7NWgMFe194g/OX2XkehcnH4R9hHOlGkst2jojU27bVo9ddUTwUutulG4/8LBmU+ufCYd5uv1uy9VajU51llNWnb6Va/IdSXdwOG8zKMe5VHvMmVmhra5LyO/XXZWpycBbGRmGOR41r+U41Wgrtel3GW09htrOSN1jW9eTjn3bGHH3yYtpGn3rdIl9T1WLvJYjIynxBGDIxodNqL7vkmoIerQPW5fgW1h+lR2g8N0DLf5mUHlwkuxMenRolllgHet3N45JB3BgYHhzkRKWQJzESEkREBERAREQEREBERAREQEREBERAQYiBp98HV4HaArneYizcfucK1yNzdHBs+/38Z8asP2rf4m/2lXZY3uz3O7vZx3Rx3858MeU3WIxA1W1Ppje7Qp2b7u5v538jGdzjnHLPDnGvcrRX2gZnIUFUD4L7hyWNfEKOJ/AY44E2uIxCHTohipBkthF7xBBbhzIPEH1nfEQkiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiB/9k=" alt="" class="w-72 rounded-lg">
+                            <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
+                                <div class="flex justify-between w-full">
+                                    <div class="font-normal">
+                                        <p class="text-sm">iACADEMY Portal</p>
+                                        <p class="text-xs text-ellipsis">Integrated System for Student and Employees in iACADEMY.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Belo Shop -->
+                    <a href="https://shop.belomed.com/">
+                        <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
+                            <img src="https://shop.belomed.com/web/images/lg_belo shop.png" alt="">
+                            <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
+                                <div class="flex justify-between w-full">
+                                    <div class="font-normal">
+                                        <p class="text-sm">Belo Shop</p>
+                                        <p class="text-xs text-ellipsis">E-Commerce Shop own by Belo Medical Group.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- image 4 -->
+                    <a href="https://portal.dpap.deped.gov.ph/">
+                        <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
+                            <img src="data:image/png;base64,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" alt="" class="w-72 rounded-lg">
+                            <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
+                                <div class="flex justify-between w-full">
+                                    <div class="font-normal">
+                                        <p class="text-sm">DPAP DEPED</p>
+                                        <p class="text-xs text-ellipsis">DepEd Partnership Assistance Portal.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- image 5 -->
+                    <a href="https://maze-iacademy.ph/#/">
+                        <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
+                            <img src="https://maze-iacademy.ph/images/mazemain.png" alt="" class="w-72 rounded-lg">
+                            <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
+                                <div class="flex justify-between w-full">
+                                    <div class="font-normal">
+                                        <p class="text-sm">Maze</p>
+                                        <p class="text-xs text-ellipsis">Social Distance Application.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- image 6 -->
+                    <a href="https://firstdistrictantipolo.com/#/">
+                        <div class="flex relative group h-[20rem] items-center justify-center dark:bg-white rounded-3xl">
+                            <img src="data:image/jpeg;base64,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" alt="" class="w-72 rounded-lg">
+                            <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 opacity-0 group-hover:opacity-100 bg-black opacity-0 group-hover:opacity-10">
+                                <div class="flex justify-between w-full">
+                                    <div class="font-normal">
+                                        <p class="text-sm">AMS (Ayuda Management System)</p>
+                                        <p class="text-xs text-ellipsis">Money Dessimination System in Municipality of Antipolo, Philippines</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- contact us -->
+                <div id="contact" class="grid md:grid-cols-2 gap-4">
+                    <div class="h-[10rem]">
+                        <div class="flex">
+                            <div class="flex flex-row">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16" fill="currentColor"><path fill="currentColor" d="M12.5 9c-1 0-1.8 0.4-2.4 1l-3.2-1.7c0.1-0.3 0.1-0.5 0.1-0.8 0-0.2 0-0.3 0-0.4l2.9-1.3c0.6 0.7 1.5 1.2 2.6 1.2 1.9 0 3.5-1.6 3.5-3.5s-1.6-3.5-3.5-3.5-3.5 1.6-3.5 3.5c0 0.2 0 0.3 0 0.4l-2.9 1.3c-0.6-0.7-1.5-1.2-2.6-1.2-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5c1 0 1.8-0.4 2.4-1l3.1 1.7c0 0.3 0 0.5 0 0.8 0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zM12.5 1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5c0-1.4 1.1-2.5 2.5-2.5zM3.5 10c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5c0 1.4-1.1 2.5-2.5 2.5zM12.5 15c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5c0 1.4-1.1 2.5-2.5 2.5z"></path></svg>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="text-md text-2xl md:text-3xl font-bold pl-3">Lets connect</p>
+                            </div>
+                        </div>
+                        <div class="text-sm">
+                            <div class="flex">
+                                <div class="flex flex-row font-normal w-4 pt-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="oe se axp"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"></path></svg>
+                                </div>
+                                <div class="flex flex-row font-normal justify-center pl-2">
+                                    <a href="https://en.wikipedia.org/wiki/Santa_Cruz,_Laguna">
+                                        <p class="pt-2 font-normal"> Sta Cruz Laguna </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-sm">
+                            <div class="flex">
+                                <div class="flex flex-row font-normal w-4 pt-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="oe se axp"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>                            </div>
+                                <div class="flex flex-row font-normal justify-center pl-2">
+                                    <p class="pt-2 font-normal"> markanthony.villudo@gmail.com </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex pt-4 gap-3">
+                            <div class="flex flex-row">
+                                <a href="https://ph.linkedin.com/in/mark-anthony-villudo-781516108">
+                                    <!-- Linkedin -->
+                                    <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6S15.302.4 10 .4zM7.65 13.979H5.706V7.723H7.65v6.256zm-.984-7.024c-.614 0-1.011-.435-1.011-.973 0-.549.409-.971 1.036-.971s1.011.422 1.023.971c0 .538-.396.973-1.048.973zm8.084 7.024h-1.944v-3.467c0-.807-.282-1.355-.985-1.355-.537 0-.856.371-.997.728-.052.127-.065.307-.065.486v3.607H8.814v-4.26c0-.781-.025-1.434-.051-1.996h1.689l.089.869h.039c.256-.408.883-1.01 1.932-1.01 1.279 0 2.238.857 2.238 2.699v3.699z"></path></svg>
+                                </a>
+                            </div>
+                            <div class="flex flex-row">
+                                <a href="https://www.facebook.com/programac14">
+                                    <!-- Facebook -->
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="flex flex-row">
+                                <a href="https://github.com/MarkVilludo">
+                                    <!-- Github -->
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                    <span class="text-2xl md:text-3xl font-bold"> Send a message </span> 
+                    <form action="#">
+                        <div class="grid md:grid-rows-2 mt-4 gap-4">
+                                <div class="hover:bg-gray-200">
+                                    <span class="block font-normal text-sm">First name</span>
+                                    <input id="fname" type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                                        invalid:border-pink-500 invalid:text-pink-600
+                                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                                    "/>
+                                </div>
+                                <div class="hover:bg-gray-200">
+                                    <span class="block font-normal text-sm">Last name</span>
+                                    <input type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                                        invalid:border-pink-500 invalid:text-pink-600
+                                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                                    "/>
+                                </div>
+                                <div class="hover:bg-gray-200">
+                                    <span class="block font-normal text-sm">Email</span>
+                                    <input type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                                        invalid:border-pink-500 invalid:text-pink-600
+                                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                                    "/>
+                                </div>
+                                <div class="hover:bg-gray-200">
+                                    <span class="block font-normal text-sm">Message</span>
+                                    <textarea class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                                        invalid:border-pink-500 invalid:text-pink-600
+                                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500"> </textarea>
+                                </div>
+                                <button id="access" class="bg-blue-700 font-bold text-white rounded-lg p-4 justify-center border border-b-4 border-b-blue-900 hover:border-t-blue-900 hover:border-t-4 hover:border-b-0 duration-100 trasition-all">Send message</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </body>
     <script>
         function chooseTheme(mode) {
