@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         <link rel="icon" type="image/x-icon" href="php.svg">
+        <link rel="stylesheet" href="input.css" />
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="toggle.js"></script>
         <script>
             tailwind.config = { 
                 darkMode: 'class', 
@@ -21,19 +21,6 @@
     <!-- Global Container -->
     <div class="flex relative justify-center items-center bg-slate-100 min-h-screen bg-white dark:bg-gray-700">
         <div class="bg-white px-6 pb-6 space-y-10 shadow-lg rounded-3xl md:p-40  dark:bg-gray-900 dark:text-white">
-            <!-- menu -->
-            <div class="flex md:invisible visible absolute  top-3 right-3">
-                <label class="relative inline-flex items-center cursor-pointer">
-                    <select id="mode-sm" onchange="chooseTheme('sm')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
-                        <option class="text-black dark:text-white dark:bg-slate-800">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
-                        </option>
-                        <option class="text-black dark:text-white dark:bg-slate-800">
-                            Dark
-                        </option>
-                    </select>
-                </label>
-            </div>
             <div class="invisible flex md:visible md:flex-row md:space-y-0 md:space-x-8 md:justify-end">
                 <div class="group">
                     <a href="#home">Home</a>
@@ -74,6 +61,55 @@
                     </select>
                 </div>
             </div>
+
+            <!-- Hamburger Button -->
+            <div class="md:hidden">
+                <button
+                id="menu-btn"
+                type="button"
+                class="z-40 block hamburger md:hidden focus:outline-none"
+                >
+                <span class="hamburger-top bg-gray-400"></span>
+                <span class="hamburger-middle bg-gray-400"></span>
+                <span class="hamburger-bottom bg-gray-400"></span>
+                </button>
+            </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="menu"
+          class="absolute top-0 bottom-0 left-0 hidden flex-col self-end h-96 w-full py-1 pt-40 pl-12 space-y-3 text-lg text-white uppercase bg-gray-900 opacity-90 rounded-lg dark:bg-gray-200"
+        >
+            <a href="#work"> Work History</a>
+            <div
+                class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                border-black group-hover:opacity-100"
+            ></div>
+            <a href="#previous"> Previous Projects</a>
+            <div
+                class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                border-black group-hover:opacity-100"
+            ></div>
+            <a href="#contact"> Contact</a>
+            <div
+                class="mx-2 mt-2  duration-500 border-b-2 opacity-0
+                border-black group-hover:opacity-100"
+            ></div>
+             <!-- menu
+            <div class="flex md:invisible visible absolute  top-3 right-3">
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <select id="mode-sm" onchange="chooseTheme('sm')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
+                        <option class="text-black dark:text-white dark:bg-slate-800">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
+                        </option>
+                        <option class="text-black dark:text-white dark:bg-slate-800">
+                            Dark
+                        </option>
+                    </select>
+                </label>
+            </div> -->
+        </div>
+
             <!-- home -->
             <div id="home" class="flex flex-col justify-center h-full max-w-[1000px]">
                 <h2 class="text-4xl sm:text-7xl font-bold text-gray">    <p>Hi. I'm Mark Villudo</p></h2>
@@ -469,7 +505,7 @@
             </div>
 
             <!-- work previous projects -->
-            <div class="flex max-w-[1000px] w-full mt-6">
+            <div id="previous" class="flex max-w-[1000px] w-full mt-6">
                 <div class="flex flex-row pt-1">
                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" stroke="currentColor" stroke-width="2" d="M9,15 L9,23 L1,23 L1,15 L9,15 Z M23,15 L23,23 L15,23 L15,15 L23,15 Z M9,1 L9,9 L1,9 L1,1 L9,1 Z M23,1 L23,9 L15,9 L15,1 L23,1 Z"></path></svg>
                 </div>
@@ -690,4 +726,5 @@
             }
         }
     </script>
+    <script src="script.js"></script>
 </html>
