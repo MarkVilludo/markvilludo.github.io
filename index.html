@@ -53,19 +53,6 @@
                     class="mx-2 mt-2  duration-500 border-b-2 opacity-0
                     border-black group-hover:opacity-100"
                 ></div>
-                <!-- menu
-                <div class="flex md:invisible visible absolute  top-3 right-3">
-                    <label class="relative inline-flex items-center cursor-pointer">
-                        <select id="mode-sm" onchange="chooseTheme('sm')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
-                            <option class="text-black dark:text-white dark:bg-slate-800">
-                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
-                            </option>
-                            <option class="text-black dark:text-white dark:bg-slate-800">
-                                Dark
-                            </option>
-                        </select>
-                    </label>
-                </div> -->
             </div>
         </div>
 
@@ -678,22 +665,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pt-4">
+                    <div>
                         <span class="text-2xl md:text-3xl font-bold"> Send a message </span> 
-                        <form action="#">
+                        <form id="contactForm">
                         <div class="grid md:grid-rows-2 mt-4 gap-4">
                                 <div class="hover:bg-gray-200">
-                                    <span class="block font-normal text-sm">First name</span>
-                                    <input id="fname" type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                                        invalid:border-pink-500 invalid:text-pink-600
-                                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-                                    "/>
-                                </div>
-                                <div class="hover:bg-gray-200">
-                                    <span class="block font-normal text-sm">Last name</span>
-                                    <input type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                    <span class="block font-normal text-sm">Full Name</span>
+                                    <input id="fname" type="text" name="name"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                                         focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                                         disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
                                         invalid:border-pink-500 invalid:text-pink-600
@@ -702,7 +680,7 @@
                                 </div>
                                 <div class="hover:bg-gray-200">
                                     <span class="block font-normal text-sm">Email</span>
-                                    <input type="text" value=""  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                    <input type="text" name="email"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                                         focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                                         disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
                                         invalid:border-pink-500 invalid:text-pink-600
@@ -711,13 +689,13 @@
                                 </div>
                                 <div class="hover:bg-gray-200">
                                     <span class="block font-normal text-sm">Message</span>
-                                    <textarea class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                    <textarea name="message" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                                         focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                                         disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
                                         invalid:border-pink-500 invalid:text-pink-600
                                         focus:invalid:border-pink-500 focus:invalid:ring-pink-500"> </textarea>
                                 </div>
-                                <button id="access" class="bg-blue-700 font-bold text-white rounded-lg p-4 justify-center border border-b-4 border-b-blue-900 hover:border-t-blue-900 hover:border-t-4 hover:border-b-0 duration-100 trasition-all">Send message</button>
+                                <button type="submit" id="access" class="bg-blue-700 font-bold text-white rounded-lg p-4 justify-center border border-b-4 border-b-blue-900 hover:border-t-blue-900 hover:border-t-4 hover:border-b-0 duration-100 trasition-all">Send message</button>
                             </div>
                         </form>
                     </div>
@@ -780,14 +758,11 @@
                     </div>
                   </div>
                 </div>
-      
                 <!-- Social & Copy Container -->
                 <div
                   class="flex flex-col items-start justify-between space-y-4 text-gray-500"
                 >
-      
-                  <!-- Copy -->
-                  <div class="flex font-bold md:pt-10">
+                <div class="flex font-bold md:pt-10">
                     &copy; 2024 MarkVilludo. All Rights Reserved
                   </div>
                 </div>
@@ -795,28 +770,5 @@
             </div>
         </footer>
     </body>
-    <script>
-       const toggleButton = document.getElementById('toggleMode');
-        const lightIcon = document.getElementById('lightIcon');
-        const darkIcon = document.getElementById('darkIcon');
-
-        // Function to toggle between light and dark mode
-        toggleButton.addEventListener('click', () => {
-            // Check if dark mode is active
-            const isDarkMode = document.documentElement.classList.contains('dark');
-
-            // Toggle dark mode class on root element
-            document.documentElement.classList.toggle('dark');
-
-            // Toggle visibility of icons based on the mode
-            if (isDarkMode) {
-                lightIcon.classList.remove('hidden');
-                darkIcon.classList.add('hidden');
-            } else {
-                lightIcon.classList.add('hidden');
-                darkIcon.classList.remove('hidden');
-            }
-        });
-    </script>
     <script src="script.js"></script>
 </html>
