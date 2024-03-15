@@ -68,6 +68,7 @@
                 </div> -->
             </div>
         </div>
+
         <!-- Global Container -->
         <div class="flex relative justify-center items-center bg-slate-100 min-h-screen bg-white dark:bg-gray-800">
             <div class="bg-white px-6 pb-6 space-y-12 pt-0 mt-0 shadow-lg rounded-3xl md:p-40  dark:bg-gray-900 dark:text-white">
@@ -100,16 +101,27 @@
                             border-black group-hover:opacity-100"
                         ></div>
                     </div>
-                    <div>
-                        <select id="mode-md" onchange="chooseTheme('md')" class="dark:bg-slate-800 border border-gray-700 dark:border dark:border-white rounded-md w-24 text-center">
-                            <option class="text-black dark:text-white dark:bg-slate-800">
-                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-slate-400 dark:stroke-slate-500"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-slate-400 dark:stroke-slate-500"></path></svg> Light
-                            </option>
-                            <option class="text-black dark:text-white dark:bg-slate-800">
-                                Dark
-                            </option>
-                        </select>
-                    </div>
+                </div>
+
+                <div class="container mx-auto text-right">
+                    <button id="toggleMode" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded dark:text-black dark:bg-gray-200 sm:px-2 sm:py-1">
+                        <!-- Light mode icon -->
+                        <svg id="lightIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <!-- Dark mode icon (hidden by default) -->
+                        <svg id="darkIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 hidden">
+                            <path d="M12 2c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9zM12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"></path>
+                        </svg>
+                    </button>
                 </div>
 
                 <!-- home -->
@@ -776,7 +788,7 @@
       
                   <!-- Copy -->
                   <div class="flex font-bold md:pt-10">
-                    &copy; 2023 MarkVilludo. All Rights Reserved
+                    &copy; 2024 MarkVilludo. All Rights Reserved
                   </div>
                 </div>
               </div>
@@ -784,19 +796,27 @@
         </footer>
     </body>
     <script>
-        function chooseTheme(mode) {
-            // console.log(mode)
-            // concat string in js
-            modeType = 'mode-';
-            concatId = modeType.concat(mode);
-            d = document.getElementById(concatId).value;
-            var element = document.getElementById("mode-body");
-            if (d === 'Light') {
-                element.classList.remove('dark');
+       const toggleButton = document.getElementById('toggleMode');
+        const lightIcon = document.getElementById('lightIcon');
+        const darkIcon = document.getElementById('darkIcon');
+
+        // Function to toggle between light and dark mode
+        toggleButton.addEventListener('click', () => {
+            // Check if dark mode is active
+            const isDarkMode = document.documentElement.classList.contains('dark');
+
+            // Toggle dark mode class on root element
+            document.documentElement.classList.toggle('dark');
+
+            // Toggle visibility of icons based on the mode
+            if (isDarkMode) {
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
             } else {
-                element.classList.add('dark');
+                lightIcon.classList.add('hidden');
+                darkIcon.classList.remove('hidden');
             }
-        }
+        });
     </script>
     <script src="script.js"></script>
 </html>
