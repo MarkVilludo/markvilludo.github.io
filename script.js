@@ -35,7 +35,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   event.preventDefault(); // Prevent default form submission
 
   const formData = new FormData(this); // Create FormData object from the form
-
   // Alternatively, you can manually append data to FormData
   // formData.append('name', document.querySelector('input[name="name"]').value);
   // formData.append('email', document.querySelector('input[name="email"]').value);
@@ -45,9 +44,10 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       method: 'POST',
       body: formData
   })
-  .then(response => response.json())
-  .then(data => {
-      console.log(data.message); // Response from the Laravel backend
+  .then(response => {
+      // console.log(response); // Response from the Laravel backend
+      alert('Successfully sent your message.')
+      this.reset(); // 'this' refers to the form element
   })
   .catch(error => {
       console.error('Error:', error);
