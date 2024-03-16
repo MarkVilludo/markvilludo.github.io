@@ -47,3 +47,18 @@
     --bg-color: #ffffff;
     --text-color: #000000;
 }
+@media (max-width: 768px) {
+  /* Adjust text size for job entries on mobile devices */
+  .text-sm {
+    font-size: 14px; /* You can adjust the font size as needed */
+  }
+
+  .text-md {
+    font-size: 14px; /* Adjust the font size for text-md on mobile */
+  }
+
+  .text-lg {
+    font-size: 18px; /* Adjust the font size for text-md on mobile */
+  }
+
+}
