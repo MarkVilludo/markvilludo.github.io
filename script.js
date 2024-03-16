@@ -33,24 +33,33 @@ toggleButton.addEventListener('click', () => {
 
 document.getElementById('contactForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent default form submission
-
   const formData = new FormData(this); // Create FormData object from the form
-  // Alternatively, you can manually append data to FormData
-  // formData.append('name', document.querySelector('input[name="name"]').value);
-  // formData.append('email', document.querySelector('input[name="email"]').value);
-  // formData.append('message', document.querySelector('textarea[name="message"]').value);
-
-  fetch('https://markvilludo.xyz/api/send-mail', {
+    fetch('https://markvilludo.xyz/api/send-mail', {
       method: 'POST',
       body: formData
-  })
-  .then(response => {
-      // console.log(response); // Response from the Laravel backend
-      alert('Successfully sent your message.')
-      this.reset(); // 'this' refers to the form element
-  })
-  .catch(error => {
-      console.error('Error:', error);
-      alert('Please check your input data, and try again!')
-  });
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Email sent successfully.');
+            alert('Successfully sent your message.');
+            this.reset(); // Clear the form
+        } else if (response.status === 422) {
+            // Handle validation errors
+            response.json().then(data => {
+                const errors = data.errors;
+                let errorMessage = '';
+                for (const field in errors) {
+                    errorMessage += `${field}: ${errors[field].join(', ')}\n`;
+                }
+                alert(errorMessage);
+            });
+        } else {
+            console.error('Server error:', response.statusText);
+            alert('Failed to send email. Please try again later.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to send email. Please try again later.');
+    });
 });
