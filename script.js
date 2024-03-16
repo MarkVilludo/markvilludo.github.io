@@ -51,5 +51,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   })
   .catch(error => {
       console.error('Error:', error);
+      alert('Please check your input data, and try again!')
   });
 });
