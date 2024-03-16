@@ -32,8 +32,8 @@ toggleButton.addEventListener('click', () => {
 });
 
 document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent default form submission
-  const formData = new FormData(this); // Create FormData object from the form
+    event.preventDefault(); // Prevent default form submission
+    const formData = new FormData(this); // Create FormData object from the form
     fetch('https://markvilludo.xyz/api/send-mail', {
       method: 'POST',
       body: formData
