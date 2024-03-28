@@ -34,32 +34,38 @@ toggleButton.addEventListener('click', () => {
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
     const formData = new FormData(this); // Create FormData object from the form
-    fetch('https://markvilludo.xyz/api/send-mail', {
-      method: 'POST',
-      body: formData
+
+    // Convert form data to JSON
+    const jsonData = {};
+    formData.forEach((value, key) => {
+        jsonData[key] = value;
+    });
+
+    // Send form data to server
+    fetch('https://node-api-sending-email.onrender.com/api/send-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonData)
     })
     .then(response => {
-        if (response.ok) {
-            console.log('Email sent successfully.');
-            alert('Successfully sent your message.');
-            this.reset(); // Clear the form
-        } else if (response.status === 422) {
-            // Handle validation errors
-            response.json().then(data => {
-                const errors = data.errors;
-                let errorMessage = '';
-                for (const field in errors) {
-                    errorMessage += `${field}: ${errors[field].join(', ')}\n`;
-                }
-                alert(errorMessage);
-            });
-        } else {
-            console.error('Server error:', response.statusText);
-            alert('Failed to send email. Please try again later.');
+        if (!response.ok) {
+            throw new Error('Failed to send email');
         }
+        return response.json();
+    })
+    .then(data => {
+        alert(data.message); // Alert the response message
+        console.log('Email sent successfully:', data);
     })
     .catch(error => {
-        console.error('Error:', error);
-        alert('Failed to send email. Please try again later.');
+        console.error('Error sending email:', error.message);
+        if (error instanceof TypeError) {
+            alert('Error: Network error. Please try again later.');
+        } else {
+            alert('Error: Failed to send email. Please check your inputs.');
+        }
     });
 });
+
