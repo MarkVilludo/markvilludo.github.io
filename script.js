@@ -22,7 +22,7 @@ toggleButton.addEventListener('click', () => {
     document.documentElement.classList.toggle('dark');
 
     // Toggle visibility of icons based on the mode
-    if (isDarkMode) {
+    if (!isDarkMode) {
         lightIcon.classList.remove('hidden');
         darkIcon.classList.add('hidden');
     } else {

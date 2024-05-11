@@ -90,9 +90,9 @@
                 </div>
 
                 <div class="container mx-auto text-right">
-                    <button id="toggleMode" class="bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded dark:text-black dark:bg-gray-200 sm:px-2 sm:py-1">
+                    <button id="toggleMode" class="bg-slate-400 hover:bg-slate-500 text-white font-bold rounded dark:text-black">
                         <!-- Light mode icon -->
-                        <svg id="lightIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                        <svg id="lightIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 hidden">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
                             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -104,7 +104,7 @@
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
                         <!-- Dark mode icon (hidden by default) -->
-                        <svg id="darkIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 hidden">
+                        <svg id="darkIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
                             <path d="M12 2c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9zM12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"></path>
                         </svg>
                     </button>
@@ -711,33 +711,28 @@
                     <div>
                         <span class="text-2xl md:text-3xl font-bold"> Send a message </span> 
                         <form id="contactForm">
-                        <div class="grid md:grid-rows-2 mt-4 gap-4">
-                                <div class="hover:bg-gray-200">
-                                    <span class="block font-normal text-sm">Full Name</span>
-                                    <input id="fname" type="text" name="senderName"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                                        invalid:border-pink-500 invalid:text-pink-600
-                                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-                                    "/>
-                                </div>
-                                <div class="hover:bg-gray-200">
-                                    <span class="block font-normal text-sm">Email</span>
-                                    <input type="text" name="senderEmail"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                                        invalid:border-pink-500 invalid:text-pink-600
-                                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-                                    "/>
-                                </div>
-                                <div class="hover:bg-gray-200">
-                                    <span class="block font-normal text-sm">Message</span>
-                                    <textarea name="message" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                                        invalid:border-pink-500 invalid:text-pink-600
-                                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500"> </textarea>
-                                </div>
+                            <div class="grid md:grid-rows-2 mt-4 gap-4">
+                                <span class="block font-normal text-sm">Full Name</span>
+                                <input id="fname" type="text" name="senderName"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                    focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                                    invalid:border-pink-500 invalid:text-pink-600
+                                    focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                                "/>
+                                <span class="block font-normal text-sm">Email</span>
+                                <input type="text" name="senderEmail"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                    focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                                    invalid:border-pink-500 invalid:text-pink-600
+                                    focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                                "/>
+                                <span class="block font-normal text-sm">Message</span>
+                                <textarea name="message" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                    focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                                    invalid:border-pink-500 invalid:text-pink-600
+                                    focus:invalid:border-pink-500 focus:invalid:ring-pink-500">
+                                </textarea>
                                 <button type="submit" id="access" class="bg-blue-700 font-bold text-white rounded-lg p-4 justify-center border border-b-4 border-b-blue-900 hover:border-t-blue-900 hover:border-t-4 hover:border-b-0 duration-100 trasition-all">Send message</button>
                             </div>
                         </form>
@@ -762,7 +757,7 @@
                 </div>
                 <!-- Menu Container -->
                 <div
-                    class="flex flex-col items-center space-y-4 font-bold text-white md:flex-row md:space-y-0 md:space-x-6 md:ml-3"
+                    class="flex flex-col items-center space-y-4 font-bold text-white md:flex-row md:space-y-0 md:space-x-6 md:ml-3: dark:bg-gray-700 dark:text-black"
                 >
                     <!-- Item 1 -->
                     <div class="h-10 group">
